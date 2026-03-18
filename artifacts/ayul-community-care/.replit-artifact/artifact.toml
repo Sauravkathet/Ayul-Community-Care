@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Ayul Community Care"
+version = "1.0.0"
+id = "artifacts/ayul-community-care"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 26005
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/ayul-community-care run dev"
+
+[services.env]
+PORT = "26005"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/ayul-community-care", "run", "build"]
+publicDir = "artifacts/ayul-community-care/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

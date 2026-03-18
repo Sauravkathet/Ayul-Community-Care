@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(210 20% 98%);
+  --color-foreground: hsl(215 28% 17%);
+  
+  --color-primary: hsl(175 80% 25%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  
+  --color-secondary: hsl(160 68% 52%);
+  --color-secondary-foreground: hsl(215 28% 17%);
+  
+  --color-accent: hsl(38 92% 50%);
+  --color-accent-foreground: hsl(0 0% 100%);
+
+  --color-muted: hsl(210 20% 96%);
+  --color-muted-foreground: hsl(215 16% 47%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(215 28% 17%);
+  
+  --color-border: hsl(214 32% 91%);
+  --color-input: hsl(214 32% 91%);
+  --color-ring: hsl(175 80% 25%);
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+:root {
+  --background: 210 20% 98%;
+  --foreground: 215 28% 17%;
+  --primary: 175 80% 25%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 160 68% 52%;
+  --secondary-foreground: 215 28% 17%;
+  --accent: 38 92% 50%;
+  --accent-foreground: 0 0% 100%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 16% 47%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 28% 17%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 175 80% 25%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    @apply bg-background/80 backdrop-blur-md border-b border-border/50;
+  }
+  
+  .soft-shadow {
+    box-shadow: 0 10px 40px -10px rgba(15, 118, 110, 0.08);
+  }
+  
+  .hover-soft-shadow {
+    @apply transition-all duration-300;
+  }
+  .hover-soft-shadow:hover {
+    box-shadow: 0 20px 40px -10px rgba(15, 118, 110, 0.12);
+    transform: translateY(-4px);
+  }
+}
