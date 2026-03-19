@@ -1,6 +1,7 @@
-import { Phone, Search, Globe, ChevronDown, X } from "lucide-react";
+import { Phone, Search, Globe, ChevronDown, X, Sun, Moon } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../contexts/ThemeContext";
 
 const LANGUAGES = [
   { code: "en", name: "English", flag: "🇦🇺" },
@@ -13,6 +14,7 @@ const LANGUAGES = [
 
 export function TopBar() {
   const { i18n } = useTranslation();
+  const { isDark, toggleDark } = useTheme();
   const [langOpen, setLangOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -35,8 +37,13 @@ export function TopBar() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  const changeLanguage = (code: string) => {
+    i18n.changeLanguage(code);
+    setLangOpen(false);
+  };
+
   return (
-    <div className="fixed top-0 w-full z-[60] bg-teal-800 text-white text-xs">
+    <div className="fixed top-0 w-full z-[60] bg-teal-800 dark:bg-teal-950 text-white text-xs transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between gap-4">
 
         {/* Left — phone */}
@@ -44,25 +51,25 @@ export function TopBar() {
           href="tel:1800233673"
           className="flex items-center gap-1.5 font-semibold tracking-wide hover:text-teal-200 transition-colors shrink-0"
         >
-          <Phone size={12} className="text-teal-300" />
+          <Phone size={12} className="text-teal-300 rtl-flip" />
           1800 233 673
         </a>
 
-        {/* Right — links + search + lang */}
-        <div className="flex items-center gap-1">
+        {/* Right */}
+        <div className="flex items-center gap-0.5">
 
           {/* Quick links */}
           {["Business Services", "Careers", "Media"].map((label) => (
             <a
               key={label}
               href="#"
-              className="hidden sm:block px-2.5 py-1 rounded hover:bg-white/10 text-teal-100 hover:text-white transition-colors font-medium"
+              className="hidden sm:block px-2.5 py-1 rounded hover:bg-white/10 text-teal-100 hover:text-white transition-colors font-medium whitespace-nowrap"
             >
               {label}
             </a>
           ))}
 
-          <div className="w-px h-4 bg-white/20 mx-1 hidden sm:block" />
+          <div className="w-px h-4 bg-white/20 mx-1.5 hidden sm:block" />
 
           {/* Search */}
           <div className="relative flex items-center">
@@ -75,7 +82,7 @@ export function TopBar() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search…"
-                  className="bg-transparent outline-none text-white placeholder-teal-300 w-32 text-xs"
+                  className="bg-transparent outline-none text-white placeholder-teal-300 w-28 text-xs"
                   onKeyDown={(e) => e.key === "Escape" && setSearchOpen(false)}
                 />
                 <button onClick={() => { setSearchOpen(false); setSearchQuery(""); }}>
@@ -93,6 +100,20 @@ export function TopBar() {
             )}
           </div>
 
+          {/* Dark mode toggle */}
+          <button
+            onClick={toggleDark}
+            className="p-1.5 rounded hover:bg-white/10 text-teal-200 hover:text-white transition-colors"
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {isDark
+              ? <Sun size={14} className="text-yellow-300" />
+              : <Moon size={14} />
+            }
+          </button>
+
+          <div className="w-px h-4 bg-white/20 mx-1 hidden sm:block" />
+
           {/* Language switcher */}
           <div className="relative" ref={langRef}>
             <button
@@ -102,26 +123,29 @@ export function TopBar() {
             >
               <Globe size={13} className="text-teal-300" />
               <span className="hidden sm:inline">{currentLang.flag} {currentLang.name}</span>
-              <span className="sm:hidden"><Globe size={13} /></span>
-              <ChevronDown size={11} className={`text-teal-300 transition-transform ${langOpen ? "rotate-180" : ""}`} />
+              <ChevronDown
+                size={11}
+                className={`text-teal-300 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
+              />
             </button>
 
             {langOpen && (
-              <div className="absolute right-0 top-full mt-1 w-44 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+              <div className="absolute end-0 top-full mt-1 w-44 bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden z-50">
                 {LANGUAGES.map((lang) => (
                   <button
                     key={lang.code}
-                    onClick={() => { i18n.changeLanguage(lang.code); setLangOpen(false); }}
+                    onClick={() => changeLanguage(lang.code)}
                     className={`w-full flex items-center gap-2.5 px-3.5 py-2.5 text-left text-sm transition-colors ${
                       i18n.language === lang.code
-                        ? "bg-teal-50 text-teal-700 font-semibold"
-                        : "text-gray-700 hover:bg-gray-50"
+                        ? "bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 font-semibold"
+                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
                     }`}
+                    dir={lang.code === "ar" ? "rtl" : "ltr"}
                   >
-                    <span className="text-base leading-none">{lang.flag}</span>
-                    <span>{lang.name}</span>
+                    <span className="text-base leading-none shrink-0">{lang.flag}</span>
+                    <span className="flex-1">{lang.name}</span>
                     {i18n.language === lang.code && (
-                      <span className="ml-auto w-1.5 h-1.5 rounded-full bg-teal-600" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400 shrink-0" />
                     )}
                   </button>
                 ))}
