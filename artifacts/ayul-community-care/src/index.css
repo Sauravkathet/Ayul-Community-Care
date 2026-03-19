@@ -38,61 +38,58 @@
 
 /* LIGHT MODE */
 :root {
-  --background: 210 20% 98%;
-  --foreground: 215 28% 17%;
-  --primary: 175 80% 25%;
+  --background: 30 20% 98%;
+  --foreground: 215 32% 14%;
+  --primary: 172 78% 26%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 160 68% 52%;
-  --secondary-foreground: 215 28% 17%;
-  --accent: 38 92% 50%;
-  --accent-foreground: 0 0% 100%;
-  --muted: 210 20% 94%;
-  --muted-foreground: 215 16% 47%;
+  --secondary: 158 64% 40%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 36 95% 52%;
+  --accent-foreground: 215 32% 14%;
+  --muted: 210 16% 93%;
+  --muted-foreground: 215 16% 44%;
   --card: 0 0% 100%;
-  --card-foreground: 215 28% 17%;
+  --card-foreground: 215 32% 14%;
   --popover: 0 0% 100%;
-  --popover-foreground: 215 28% 17%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 175 80% 25%;
+  --popover-foreground: 215 32% 14%;
+  --border: 214 24% 88%;
+  --input: 214 24% 88%;
+  --ring: 172 78% 26%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
 }
 
 /* DARK MODE */
 .dark {
-  --background: 222 47% 8%;
-  --foreground: 210 40% 94%;
-  --primary: 175 55% 42%;
+  --background: 220 30% 7%;
+  --foreground: 210 30% 92%;
+  --primary: 172 55% 40%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 160 50% 40%;
-  --secondary-foreground: 210 40% 94%;
-  --accent: 38 85% 55%;
-  --accent-foreground: 222 47% 8%;
-  --muted: 222 35% 14%;
-  --muted-foreground: 215 20% 58%;
-  --card: 222 40% 11%;
-  --card-foreground: 210 40% 94%;
-  --popover: 222 40% 11%;
-  --popover-foreground: 210 40% 94%;
-  --border: 222 30% 20%;
-  --input: 222 30% 20%;
-  --ring: 175 55% 42%;
+  --secondary: 158 50% 38%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 36 88% 55%;
+  --accent-foreground: 220 30% 7%;
+  --muted: 220 22% 13%;
+  --muted-foreground: 215 16% 55%;
+  --card: 220 25% 10%;
+  --card-foreground: 210 30% 92%;
+  --popover: 220 25% 10%;
+  --popover-foreground: 210 30% 92%;
+  --border: 220 20% 18%;
+  --input: 220 20% 18%;
+  --ring: 172 55% 40%;
   --destructive: 0 62% 50%;
   --destructive-foreground: 0 0% 100%;
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground transition-colors duration-300;
+    @apply font-sans antialiased bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -102,29 +99,48 @@
 }
 
 @layer utilities {
+  /* Rich hero gradient — deep teal to emerald */
+  .hero-gradient {
+    background: linear-gradient(135deg, #064E3B 0%, #0F766E 45%, #0D9488 100%);
+  }
+
+  /* Warm page header gradient */
+  .page-header-gradient {
+    background: linear-gradient(135deg, #0F766E 0%, #0D9488 60%, #14B8A6 100%);
+  }
+
+  /* Gold shimmer for accent strip */
+  .gold-gradient {
+    background: linear-gradient(135deg, #D97706 0%, #F59E0B 50%, #FCD34D 100%);
+  }
+
   .glass-nav {
-    @apply bg-background/85 backdrop-blur-md border-b border-border/50;
+    @apply bg-background/90 backdrop-blur-md border-b border-border/40;
   }
 
-  .soft-shadow {
-    box-shadow: 0 10px 40px -10px rgba(15, 118, 110, 0.08);
+  .card-shadow {
+    box-shadow:
+      0 1px 3px rgba(0,0,0,0.06),
+      0 8px 24px -4px rgba(15, 118, 110, 0.10);
   }
 
-  .dark .soft-shadow {
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4);
+  .card-shadow-hover {
+    box-shadow:
+      0 4px 12px rgba(0,0,0,0.08),
+      0 20px 40px -8px rgba(15, 118, 110, 0.18);
   }
 
-  .hover-soft-shadow {
-    @apply transition-all duration-300;
+  .dark .card-shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 8px 24px -4px rgba(0,0,0,0.4);
   }
 
+  .soft-shadow { box-shadow: 0 10px 40px -10px rgba(15, 118, 110, 0.10); }
+
+  .hover-soft-shadow { @apply transition-all duration-300; }
   .hover-soft-shadow:hover {
-    box-shadow: 0 20px 40px -10px rgba(15, 118, 110, 0.12);
+    box-shadow: 0 20px 40px -10px rgba(15, 118, 110, 0.18);
     transform: translateY(-4px);
   }
 
-  /* RTL logical spacing utilities */
-  [dir="rtl"] .rtl-flip {
-    transform: scaleX(-1);
-  }
+  [dir="rtl"] .rtl-flip { transform: scaleX(-1); }
 }
