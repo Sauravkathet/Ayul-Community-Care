@@ -39,10 +39,10 @@ export default function About() {
         </svg>
       </div>
 
-      {/* Stats bar */}
-      <div className="bg-white dark:bg-card border-b border-gray-100 dark:border-border">
+      {/* Stats bar — BLACK */}
+      <div style={{ backgroundColor: "#111827" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100 dark:divide-border">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/8">
             {stats.map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -50,10 +50,10 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className="text-center py-8 px-4"
+                className="text-center py-10 px-4"
               >
-                <p className="text-3xl font-display font-extrabold text-purple-700 dark:text-purple-400">{stat.value}</p>
-                <p className="text-sm text-gray-500 mt-1 font-medium">{stat.label}</p>
+                <p className="text-3xl font-display font-extrabold text-purple-400 mb-1">{stat.value}</p>
+                <p className="text-sm text-gray-400 font-medium">{stat.label}</p>
               </motion.div>
             ))}
           </div>

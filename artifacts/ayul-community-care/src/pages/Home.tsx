@@ -146,13 +146,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TRUST STRIP ─────────────────────────────────────── */}
-      <section className="bg-white dark:bg-card border-y border-gray-100 dark:border-border py-5">
+      {/* ── TRUST STRIP — BLACK ─────────────────────────────── */}
+      <section style={{ backgroundColor: "#111827" }} className="py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-gray-500 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-gray-300 font-medium">
             {["NDIS Registered Provider", "Person-Centered Approach", "24/7 Support Available", "Sydney Based", "Fully Insured & Qualified"].map((item) => (
               <span key={item} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
                 {item}
               </span>
             ))}
@@ -241,16 +241,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="py-28 bg-white dark:bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── TESTIMONIALS — BLACK ─────────────────────────────── */}
+      <section className="py-28 relative overflow-hidden" style={{ backgroundColor: "#111827" }}>
+        {/* Subtle purple glow in corner */}
+        <div className="absolute top-0 end-0 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 start-0 w-64 h-64 bg-violet-600/8 rounded-full blur-[80px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-purple-500/20 text-purple-300 text-sm font-semibold mb-4 border border-purple-500/20">
               Testimonials
             </span>
-            <h2 className="text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-              Real Stories, <span className="text-purple-700 dark:text-purple-400">Real Impact</span>
+            <h2 className="text-4xl font-display font-bold text-white mb-4">
+              Real Stories, <span className="text-purple-400">Real Impact</span>
             </h2>
+            <p className="text-gray-400">Hear from the people whose lives we've had the privilege to support.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -261,19 +266,42 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.12, duration: 0.5 }}
-                className="bg-white dark:bg-card rounded-3xl p-8 card-shadow border border-gray-100 dark:border-border flex flex-col"
+                className="rounded-3xl p-8 flex flex-col border border-white/8 hover:border-purple-500/30 transition-colors duration-300"
+                style={{ backgroundColor: "#1F2937" }}
               >
-                <Quote className="text-purple-200 dark:text-purple-800 mb-4" size={28} />
-                <p className="text-gray-600 dark:text-muted-foreground leading-relaxed flex-grow mb-6 italic">"{t.quote}"</p>
+                <Quote className="text-purple-500 mb-4" size={28} />
+                <p className="text-gray-300 leading-relaxed flex-grow mb-6 italic">"{t.quote}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm shadow">
+                  <div className="w-11 h-11 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-purple-600/20">
                     {t.initials}
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">{t.name}</p>
+                    <p className="font-semibold text-white">{t.name}</p>
                     <p className="text-xs text-gray-500">{t.role}</p>
                   </div>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Stats row inside dark section */}
+          <div className="mt-20 pt-12 border-t border-white/8 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { value: "500+", label: "Participants Supported" },
+              { value: "5+", label: "Years of Experience" },
+              { value: "50+", label: "Qualified Support Workers" },
+              { value: "100%", label: "NDIS Registered" },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07 }}
+                className="text-center"
+              >
+                <p className="text-4xl font-display font-extrabold text-purple-400 mb-2">{stat.value}</p>
+                <p className="text-sm text-gray-400">{stat.label}</p>
               </motion.div>
             ))}
           </div>

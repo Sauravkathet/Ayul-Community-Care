@@ -125,11 +125,15 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Bottom CTA */}
-      <div className="py-20" style={{ backgroundColor: "#F7F7FB" }}>
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">Not sure which service is right for you?</h2>
-          <p className="text-gray-500 mb-8 leading-relaxed">Our friendly team will guide you through the options and help you get the most from your NDIS plan.</p>
+      {/* Bottom CTA — BLACK */}
+      <div className="py-24 relative overflow-hidden" style={{ backgroundColor: "#111827" }}>
+        <div className="absolute top-0 end-0 w-80 h-80 bg-purple-600/10 rounded-full blur-[80px] pointer-events-none" />
+        <div className="max-w-2xl mx-auto px-4 text-center relative z-10">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-purple-500/20 text-purple-300 text-sm font-semibold mb-5 border border-purple-500/20">
+            Get Started Today
+          </span>
+          <h2 className="text-4xl font-display font-bold text-white mb-4">Not sure which service is right for you?</h2>
+          <p className="text-gray-400 mb-10 leading-relaxed">Our friendly team will guide you through your options and help you get the most from your NDIS plan.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
@@ -139,7 +143,7 @@ export default function Services() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-10 py-4 border-2 border-purple-600 text-purple-700 font-semibold rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-4 border border-white/20 text-gray-300 hover:text-white hover:border-purple-400/50 font-semibold rounded-full transition-all duration-300"
             >
               Make a Referral
             </Link>
