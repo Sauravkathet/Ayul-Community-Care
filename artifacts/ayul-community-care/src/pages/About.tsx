@@ -118,7 +118,7 @@ export default function About() {
             </div>
             <h3 className="text-2xl font-display font-bold mb-4 text-white">Our Vision</h3>
             <p className="text-white/80 leading-relaxed">
-              To be the most trusted and respected NDIS provider in Sydney, known for our unwavering commitment to excellence, innovation in care, and the profound positive impact we make in the lives of those we serve.
+              To be the most trusted and respected NDIS provider in Sydney, known for our unwavering commitment to excellence in care, and the profound positive impact we make in the lives of those we serve.
             </p>
           </motion.div>
         </div>
