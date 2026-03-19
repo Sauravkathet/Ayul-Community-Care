@@ -11,9 +11,6 @@ const services = [
     desc: "Comprehensive navigation and implementation of your NDIS plan to maximize your funded supports and achieve your personal goals.",
     image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=500&fit=crop",
     points: ["Plan management", "Support coordination", "Goal setting", "Progress reviews"],
-    color: "from-teal-600 to-teal-700",
-    lightColor: "bg-teal-50 dark:bg-teal-950/40",
-    accentColor: "text-teal-700 dark:text-teal-400",
   },
   {
     id: "personal-care",
@@ -22,9 +19,6 @@ const services = [
     desc: "Dignified and respectful support with daily personal activities tailored to your specific routines and preferences.",
     image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&h=500&fit=crop",
     points: ["Grooming & hygiene", "Dressing support", "Mobility assistance", "Health monitoring"],
-    color: "from-emerald-600 to-emerald-700",
-    lightColor: "bg-emerald-50 dark:bg-emerald-950/40",
-    accentColor: "text-emerald-700 dark:text-emerald-400",
   },
   {
     id: "community",
@@ -33,9 +27,6 @@ const services = [
     desc: "Empowering you to engage in social, recreational, and civic activities that bring joy and meaning to your life.",
     image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&h=500&fit=crop",
     points: ["Social outings", "Recreational activities", "Volunteer work", "Skills development"],
-    color: "from-cyan-600 to-cyan-700",
-    lightColor: "bg-cyan-50 dark:bg-cyan-950/40",
-    accentColor: "text-cyan-700 dark:text-cyan-400",
   },
   {
     id: "daily-living",
@@ -44,9 +35,6 @@ const services = [
     desc: "Skill development and assistance to build independence in managing everyday household tasks and routines.",
     image: "https://images.unsplash.com/photo-1556910103-1c02745a872f?w=800&h=500&fit=crop",
     points: ["Meal preparation", "Cleaning & tidying", "Shopping assistance", "Life skills coaching"],
-    color: "from-amber-500 to-amber-600",
-    lightColor: "bg-amber-50 dark:bg-amber-950/40",
-    accentColor: "text-amber-700 dark:text-amber-400",
   },
   {
     id: "disability",
@@ -55,9 +43,6 @@ const services = [
     desc: "Specialised, empathetic care adapted to various disabilities, focusing on your capabilities and unique strengths.",
     image: "https://images.unsplash.com/photo-1633525164213-90924436531d?w=800&h=500&fit=crop",
     points: ["Behaviour support", "Therapy assistance", "Medical coordination", "Capacity building"],
-    color: "from-rose-500 to-rose-600",
-    lightColor: "bg-rose-50 dark:bg-rose-950/40",
-    accentColor: "text-rose-700 dark:text-rose-400",
   },
   {
     id: "sil",
@@ -66,9 +51,6 @@ const services = [
     desc: "24/7 support in a shared or individual home, helping you live as independently and comfortably as possible.",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop",
     points: ["24/7 on-call support", "Safe living environment", "Independence goals", "Personalised routines"],
-    color: "from-violet-600 to-violet-700",
-    lightColor: "bg-violet-50 dark:bg-violet-950/40",
-    accentColor: "text-violet-700 dark:text-violet-400",
   },
 ];
 
@@ -102,32 +84,30 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="group bg-card rounded-3xl overflow-hidden card-shadow hover:card-shadow-hover hover:-translate-y-1.5 transition-all duration-350 border border-border/50 flex flex-col"
+              className="group bg-white dark:bg-card rounded-3xl overflow-hidden flex flex-col card-purple-hover card-shadow"
             >
               {/* Image */}
               <div className="h-44 overflow-hidden relative">
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-60 group-hover:opacity-40 transition-opacity z-10`} />
+                <div className="absolute inset-0 bg-purple-900/40 group-hover:bg-purple-900/25 transition-opacity z-10" />
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-600"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* Icon floating on image */}
-                <div className={`absolute bottom-4 start-4 z-20 w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-xl`}>
-                  <service.icon className="h-7 w-7 text-white" />
+                <div className="absolute bottom-4 start-4 z-20 w-13 h-13 w-12 h-12 rounded-2xl bg-purple-600 flex items-center justify-center shadow-xl">
+                  <service.icon className="h-6 w-6 text-white" />
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-7 flex-grow flex flex-col">
-                <h3 className="text-xl font-display font-bold mb-3 text-foreground">{service.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-5">{service.desc}</p>
+                <h3 className="text-xl font-display font-bold mb-3 text-gray-900 dark:text-white">{service.title}</h3>
+                <p className="text-gray-500 dark:text-muted-foreground text-sm leading-relaxed flex-grow mb-5">{service.desc}</p>
 
-                {/* Feature points */}
                 <div className="grid grid-cols-2 gap-1.5 mb-6">
                   {service.points.map((pt) => (
-                    <div key={pt} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                      <CheckCircle2 size={13} className={service.accentColor} />
+                    <div key={pt} className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-muted-foreground">
+                      <CheckCircle2 size={13} className="text-purple-600 shrink-0" />
                       {pt}
                     </div>
                   ))}
@@ -135,7 +115,7 @@ export default function Services() {
 
                 <Link
                   href="/contact"
-                  className={`inline-flex items-center gap-1.5 text-sm font-semibold ${service.accentColor} hover:gap-2.5 transition-all duration-200`}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-600 hover:text-purple-800 dark:text-purple-400 hover:gap-2.5 transition-all duration-200"
                 >
                   Enquire about this service <ArrowRight size={15} />
                 </Link>
@@ -146,16 +126,24 @@ export default function Services() {
       </div>
 
       {/* Bottom CTA */}
-      <div className="bg-gradient-to-b from-teal-50/60 to-background dark:from-teal-950/20 dark:to-background py-20">
+      <div className="py-20" style={{ backgroundColor: "#F7F7FB" }}>
         <div className="max-w-2xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold text-foreground mb-4">Not sure which service is right for you?</h2>
-          <p className="text-muted-foreground mb-8 leading-relaxed">Our friendly team will guide you through the options and help you get the most from your NDIS plan.</p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-10 py-4 bg-teal-700 dark:bg-teal-600 text-white font-semibold rounded-full shadow-lg shadow-teal-700/25 hover:bg-teal-800 hover:-translate-y-0.5 transition-all duration-300"
-          >
-            Talk to Our Team <ArrowRight size={18} />
-          </Link>
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">Not sure which service is right for you?</h2>
+          <p className="text-gray-500 mb-8 leading-relaxed">Our friendly team will guide you through the options and help you get the most from your NDIS plan.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-full shadow-lg shadow-purple-600/20 hover:-translate-y-0.5 transition-all duration-300"
+            >
+              Talk to Our Team <ArrowRight size={18} />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-10 py-4 border-2 border-purple-600 text-purple-700 font-semibold rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300"
+            >
+              Make a Referral
+            </Link>
+          </div>
         </div>
       </div>
 

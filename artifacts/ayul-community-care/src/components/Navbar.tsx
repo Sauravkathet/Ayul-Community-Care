@@ -55,38 +55,22 @@ const dropdownMenus = [
   },
 ];
 
-const overlayVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.2 } },
-  exit: { opacity: 0, transition: { duration: 0.2, delay: 0.15 } },
-};
-
 const menuVariants = {
-  hidden: { opacity: 0, y: -8, clipPath: "inset(0 0 100% 0 round 0px)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    clipPath: "inset(0 0 0% 0 round 0px)",
-    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
-  },
-  exit: {
-    opacity: 0,
-    y: -8,
-    clipPath: "inset(0 0 100% 0 round 0px)",
-    transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
-  },
+  hidden: { opacity: 0, y: -6, clipPath: "inset(0 0 100% 0 round 0px)" },
+  visible: { opacity: 1, y: 0, clipPath: "inset(0 0 0% 0 round 0px)", transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] } },
+  exit: { opacity: 0, y: -6, clipPath: "inset(0 0 100% 0 round 0px)", transition: { duration: 0.22, ease: [0.22, 1, 0.36, 1] } },
 };
 
 const itemContainerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.045, delayChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.04, delayChildren: 0.07 } },
   exit: {},
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, x: -10 },
-  visible: { opacity: 1, x: 0, transition: { ease: [0.22, 1, 0.36, 1], duration: 0.3 } },
-  exit: { opacity: 0, x: -6, transition: { duration: 0.15 } },
+  hidden: { opacity: 0, x: -8 },
+  visible: { opacity: 1, x: 0, transition: { ease: [0.22, 1, 0.36, 1], duration: 0.28 } },
+  exit: { opacity: 0, x: -4, transition: { duration: 0.12 } },
 };
 
 function DesktopDropdown({ menu, isOpen, onClose }: { menu: typeof dropdownMenus[0]; isOpen: boolean; onClose: () => void }) {
@@ -94,29 +78,19 @@ function DesktopDropdown({ menu, isOpen, onClose }: { menu: typeof dropdownMenus
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          variants={menuVariants}
-          className="absolute top-full start-1/2 -translate-x-1/2 mt-2 w-[520px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden"
-          style={{ zIndex: 100 }}
+          initial="hidden" animate="visible" exit="exit" variants={menuVariants}
+          className="absolute top-full start-1/2 -translate-x-1/2 mt-2 w-[520px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden z-[100]"
         >
-          <motion.div
-            className="p-2 grid grid-cols-2 gap-1"
-            variants={itemContainerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
+          <motion.div className="p-2 grid grid-cols-2 gap-1" variants={itemContainerVariants} initial="hidden" animate="visible" exit="exit">
             {menu.items.map((item) => (
               <motion.div key={item.title} variants={itemVariants}>
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className="flex items-start gap-3 px-4 py-3.5 rounded-xl hover:bg-teal-50 dark:hover:bg-teal-900/30 transition-colors group"
+                  className="flex items-start gap-3 px-4 py-3.5 rounded-xl hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors group"
                 >
-                  <div className="mt-0.5 p-2 bg-teal-100 dark:bg-teal-900/50 rounded-lg group-hover:bg-teal-600 dark:group-hover:bg-teal-600 transition-colors shrink-0">
-                    <item.icon size={16} className="text-teal-700 dark:text-teal-400 group-hover:text-white transition-colors" />
+                  <div className="mt-0.5 p-2 bg-purple-100 dark:bg-purple-900/40 rounded-lg group-hover:bg-purple-600 transition-colors shrink-0">
+                    <item.icon size={15} className="text-purple-700 dark:text-purple-400 group-hover:text-white transition-colors" />
                   </div>
                   <div className="min-w-0">
                     <p className="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-tight">{item.title}</p>
@@ -126,13 +100,9 @@ function DesktopDropdown({ menu, isOpen, onClose }: { menu: typeof dropdownMenus
               </motion.div>
             ))}
           </motion.div>
-          <div className="bg-teal-50 dark:bg-teal-950/60 border-t border-teal-100 dark:border-teal-900 px-5 py-3 flex items-center justify-between">
-            <span className="text-xs text-teal-700 dark:text-teal-400 font-medium">Need help finding the right support?</span>
-            <Link
-              href="/contact"
-              onClick={onClose}
-              className="text-xs font-semibold text-white bg-teal-700 dark:bg-teal-600 px-3 py-1.5 rounded-full hover:bg-teal-800 transition-colors"
-            >
+          <div className="bg-purple-50 dark:bg-purple-950/40 border-t border-purple-100 dark:border-purple-900 px-5 py-3 flex items-center justify-between">
+            <span className="text-xs text-purple-700 dark:text-purple-400 font-medium">Need help finding the right support?</span>
+            <Link href="/contact" onClick={onClose} className="text-xs font-semibold text-white bg-purple-600 px-3 py-1.5 rounded-full hover:bg-purple-700 transition-colors">
               Talk to us
             </Link>
           </div>
@@ -157,12 +127,8 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-      setMobileExpanded(null);
-    }
+    if (isOpen) { document.body.style.overflow = "hidden"; }
+    else { document.body.style.overflow = ""; setMobileExpanded(null); }
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
@@ -176,20 +142,14 @@ export function Navbar() {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setActiveDropdown(label);
   };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setActiveDropdown(null), 120);
-  };
-
+  const handleMouseLeave = () => { timeoutRef.current = setTimeout(() => setActiveDropdown(null), 120); };
   const closeAll = () => { setIsOpen(false); setActiveDropdown(null); };
 
   return (
     <header
-      className={`fixed top-9 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 dark:bg-gray-950/95 backdrop-blur-md shadow-sm py-3"
-          : "bg-white/85 dark:bg-gray-950/85 backdrop-blur-sm py-4"
-      }`}
+      className={`fixed top-9 w-full z-50 transition-all duration-300 bg-white dark:bg-gray-950 ${
+        scrolled ? "shadow-sm py-3" : "py-4"
+      } border-b border-gray-100 dark:border-gray-800`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -201,14 +161,14 @@ export function Navbar() {
               alt="Ayul Community Care Logo"
               className="h-9 w-9 object-contain group-hover:scale-105 transition-transform"
             />
-            <span className="font-bold text-lg text-teal-800 dark:text-teal-300 tracking-tight leading-tight">
+            <span className="font-bold text-lg text-gray-900 dark:text-white tracking-tight leading-tight">
               Ayul<br />
-              <span className="text-sm font-semibold text-teal-600 dark:text-teal-500 leading-none">Community Care</span>
+              <span className="text-sm font-semibold text-purple-600 dark:text-purple-400 leading-none">Community Care</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
+          <nav className="hidden lg:flex items-center gap-0.5" onClick={(e) => e.stopPropagation()}>
             {dropdownMenus.map((menu) => (
               <div
                 key={menu.label}
@@ -219,24 +179,17 @@ export function Navbar() {
                 <button
                   className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                     activeDropdown === menu.label
-                      ? "text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-900/30"
-                      : "text-gray-600 dark:text-gray-300 hover:text-teal-700 dark:hover:text-teal-300 hover:bg-teal-50/60 dark:hover:bg-teal-900/20"
+                      ? "text-purple-700 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20"
+                      : "text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 hover:bg-purple-50/70 dark:hover:bg-purple-900/10"
                   }`}
                 >
                   {menu.label}
                   <ChevronDown
                     size={14}
-                    className={`transition-transform duration-200 ${
-                      activeDropdown === menu.label ? "rotate-180 text-teal-600" : "text-gray-400"
-                    }`}
+                    className={`transition-transform duration-200 ${activeDropdown === menu.label ? "rotate-180 text-purple-600" : "text-gray-400"}`}
                   />
                 </button>
-
-                <DesktopDropdown
-                  menu={menu}
-                  isOpen={activeDropdown === menu.label}
-                  onClose={() => setActiveDropdown(null)}
-                />
+                <DesktopDropdown menu={menu} isOpen={activeDropdown === menu.label} onClose={() => setActiveDropdown(null)} />
               </div>
             ))}
 
@@ -244,8 +197,8 @@ export function Navbar() {
               href="/contact"
               className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                 location === "/contact"
-                  ? "text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-900/30"
-                  : "text-gray-600 dark:text-gray-300 hover:text-teal-700 dark:hover:text-teal-300 hover:bg-teal-50/60"
+                  ? "text-purple-700 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20"
+                  : "text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 hover:bg-purple-50/70"
               }`}
             >
               Contact Us
@@ -256,7 +209,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center">
             <Link
               href="/contact"
-              className="px-5 py-2.5 bg-teal-700 dark:bg-teal-600 text-white text-sm font-semibold rounded-full shadow-lg shadow-teal-700/20 hover:bg-teal-800 hover:-translate-y-0.5 transition-all duration-200"
+              className="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-full shadow-md shadow-purple-600/20 hover:-translate-y-0.5 transition-all duration-200"
             >
               Get Support
             </Link>
@@ -265,28 +218,16 @@ export function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative z-[200] text-teal-700 dark:text-teal-300 p-2 rounded-lg hover:bg-teal-50 dark:hover:bg-teal-900/30 transition-colors"
+            className="lg:hidden relative z-[200] text-gray-700 dark:text-gray-300 p-2 rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait" initial={false}>
               {isOpen ? (
-                <motion.span
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.15 }}
-                >
+                <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
                   <X size={22} />
                 </motion.span>
               ) : (
-                <motion.span
-                  key="open"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.15 }}
-                >
+                <motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
                   <Menu size={22} />
                 </motion.span>
               )}
@@ -295,21 +236,15 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu — full-screen premium overlay */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
-              variants={overlayVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className="fixed inset-0 top-[72px] bg-black/40 backdrop-blur-sm lg:hidden"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              className="fixed inset-0 top-[72px] bg-black/30 backdrop-blur-sm lg:hidden"
               onClick={() => setIsOpen(false)}
             />
-
-            {/* Slide-down panel */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } }}
@@ -326,17 +261,13 @@ export function Navbar() {
                   >
                     <button
                       onClick={() => setMobileExpanded(mobileExpanded === menu.label ? null : menu.label)}
-                      className="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-colors"
+                      className="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
                     >
                       {menu.label}
-                      <motion.span
-                        animate={{ rotate: mobileExpanded === menu.label ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
+                      <motion.span animate={{ rotate: mobileExpanded === menu.label ? 180 : 0 }} transition={{ duration: 0.2 }}>
                         <ChevronDown size={16} className="text-gray-400" />
                       </motion.span>
                     </button>
-
                     <AnimatePresence initial={false}>
                       {mobileExpanded === menu.label && (
                         <motion.div
@@ -351,15 +282,15 @@ export function Navbar() {
                                 key={item.title}
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: j * 0.04, duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                                transition={{ delay: j * 0.04, duration: 0.25 }}
                               >
                                 <Link
                                   href={item.href}
                                   onClick={closeAll}
-                                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-gray-600 dark:text-gray-300 hover:bg-teal-50 dark:hover:bg-teal-900/20 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+                                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-gray-600 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-700 dark:hover:text-purple-400 transition-colors"
                                 >
-                                  <div className="p-1.5 bg-teal-100 dark:bg-teal-900/50 rounded-lg shrink-0">
-                                    <item.icon size={14} className="text-teal-700 dark:text-teal-400" />
+                                  <div className="p-1.5 bg-purple-100 dark:bg-purple-900/40 rounded-lg shrink-0">
+                                    <item.icon size={14} className="text-purple-700 dark:text-purple-400" />
                                   </div>
                                   <div>
                                     <p className="font-medium leading-tight">{item.title}</p>
@@ -378,27 +309,21 @@ export function Navbar() {
                 <motion.div
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 + dropdownMenus.length * 0.04, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ delay: 0.05 + dropdownMenus.length * 0.04, duration: 0.3 }}
                 >
-                  <Link
-                    href="/contact"
-                    onClick={closeAll}
-                    className="block px-4 py-3.5 rounded-xl text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-colors"
-                  >
+                  <Link href="/contact" onClick={closeAll} className="block px-4 py-3.5 rounded-xl text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
                     Contact Us
                   </Link>
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.28, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28, duration: 0.3 }}
                   className="pt-3 pb-2"
                 >
                   <Link
                     href="/contact"
                     onClick={closeAll}
-                    className="block w-full text-center py-3.5 bg-teal-700 dark:bg-teal-600 text-white font-semibold rounded-xl shadow-lg shadow-teal-700/20 hover:bg-teal-800 transition-colors"
+                    className="block w-full text-center py-3.5 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl shadow-md shadow-purple-600/20 transition-colors"
                   >
                     Get Support
                   </Link>

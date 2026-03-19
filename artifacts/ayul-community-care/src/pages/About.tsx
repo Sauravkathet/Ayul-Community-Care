@@ -12,10 +12,10 @@ const values = [
 ];
 
 const stats = [
-  { value: "500+", label: "Lives Impacted", color: "from-teal-500 to-teal-700" },
-  { value: "5+", label: "Years Experience", color: "from-emerald-500 to-emerald-700" },
-  { value: "50+", label: "Support Workers", color: "from-amber-500 to-amber-700" },
-  { value: "100%", label: "NDIS Registered", color: "from-cyan-500 to-cyan-700" },
+  { value: "500+", label: "Lives Impacted" },
+  { value: "5+", label: "Years Experience" },
+  { value: "50+", label: "Support Workers" },
+  { value: "100%", label: "NDIS Registered" },
 ];
 
 export default function About() {
@@ -40,9 +40,9 @@ export default function About() {
       </div>
 
       {/* Stats bar */}
-      <div className="bg-card border-b border-border/50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border/50">
+      <div className="bg-white dark:bg-card border-b border-gray-100 dark:border-border">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100 dark:divide-border">
             {stats.map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -52,8 +52,8 @@ export default function About() {
                 transition={{ delay: idx * 0.08 }}
                 className="text-center py-8 px-4"
               >
-                <p className={`text-3xl font-display font-extrabold bg-gradient-to-br ${stat.color} bg-clip-text text-transparent`}>{stat.value}</p>
-                <p className="text-sm text-muted-foreground mt-1 font-medium">{stat.label}</p>
+                <p className="text-3xl font-display font-extrabold text-purple-700 dark:text-purple-400">{stat.value}</p>
+                <p className="text-sm text-gray-500 mt-1 font-medium">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -65,35 +65,29 @@ export default function About() {
         {/* Story */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 text-sm font-semibold mb-5">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-semibold mb-5">
               Our Story
             </span>
-            <h2 className="text-4xl font-display font-bold mb-6 text-foreground">
-              Born from a <span className="text-teal-700 dark:text-teal-400">Genuine Passion</span> to Help
+            <h2 className="text-4xl font-display font-bold mb-6 text-gray-900 dark:text-white">
+              Born from a <span className="text-purple-700 dark:text-purple-400">Genuine Passion</span> to Help
             </h2>
-            <div className="space-y-5 text-muted-foreground leading-relaxed text-base">
-              <p>
-                Founded in 2020, Ayul Community Care was born from a deep-rooted passion to support and uplift individuals with disabilities. We recognized a need for care that goes beyond basic assistance — care that is truly person-centered, empathetic, and empowering.
-              </p>
-              <p>
-                As a registered NDIS provider based in Sydney, we have grown into a community of dedicated professionals who share a common goal: to help our participants achieve their aspirations, maintain their independence, and live life with dignity.
-              </p>
-              <p>
-                Every person who comes to us receives a genuinely tailored support plan. We celebrate every milestone, no matter how small, because we know each step forward matters.
-              </p>
+            <div className="space-y-5 text-gray-500 dark:text-muted-foreground leading-relaxed">
+              <p>Founded in 2020, Ayul Community Care was born from a deep-rooted passion to support and uplift individuals with disabilities. We recognized a need for care that goes beyond basic assistance — care that is truly person-centered, empathetic, and empowering.</p>
+              <p>As a registered NDIS provider based in Sydney, we have grown into a community of dedicated professionals who share a common goal: to help our participants achieve their aspirations, maintain their independence, and live life with dignity.</p>
+              <p>Every person who comes to us receives a genuinely tailored support plan. We celebrate every milestone, no matter how small, because we know each step forward matters.</p>
             </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
-            <div className="absolute -inset-3 bg-gradient-to-br from-teal-500/20 to-amber-400/10 rounded-[3rem] blur-2xl" />
+            <div className="absolute -inset-3 bg-gradient-to-br from-purple-100 to-violet-100 rounded-[3rem] blur-2xl opacity-60" />
             <img
               src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1000&h=800&fit=crop"
               alt="Community Support"
               className="relative rounded-3xl shadow-2xl w-full object-cover"
             />
-            <div className="absolute -bottom-5 -start-5 bg-amber-400 text-gray-900 p-6 rounded-2xl shadow-xl">
+            <div className="absolute -bottom-5 -start-5 bg-purple-600 text-white p-6 rounded-2xl shadow-xl">
               <p className="text-3xl font-display font-bold">5+</p>
-              <p className="font-semibold text-sm">Years of Experience</p>
+              <p className="font-semibold text-sm text-purple-200">Years of Experience</p>
             </div>
           </motion.div>
         </div>
@@ -102,29 +96,28 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-7 mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="bg-card p-10 rounded-3xl card-shadow border border-border/50 relative overflow-hidden"
+            className="bg-white dark:bg-card p-10 rounded-3xl card-shadow border border-gray-100 dark:border-border relative overflow-hidden"
           >
             <div className="absolute top-0 end-0 p-8 opacity-[0.04]"><Target size={130} /></div>
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center mb-6 shadow-lg">
+            <div className="w-14 h-14 rounded-2xl bg-purple-600 flex items-center justify-center mb-6 shadow-md shadow-purple-600/20">
               <Target className="text-white h-7 w-7" />
             </div>
-            <h3 className="text-2xl font-display font-bold mb-4 text-teal-700 dark:text-teal-400">Our Mission</h3>
-            <p className="text-muted-foreground leading-relaxed text-base">
+            <h3 className="text-2xl font-display font-bold mb-4 text-purple-700 dark:text-purple-400">Our Mission</h3>
+            <p className="text-gray-500 dark:text-muted-foreground leading-relaxed">
               To provide high-quality, compassionate, and personalised support services that empower individuals with disabilities to achieve their goals, enhance their independence, and actively participate in their communities.
             </p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-            className="relative overflow-hidden rounded-3xl p-10 shadow-xl"
-            style={{ background: "linear-gradient(135deg, #064E3B 0%, #0F766E 50%, #0D9488 100%)" }}
+            className="relative overflow-hidden rounded-3xl p-10 shadow-xl hero-gradient"
           >
             <div className="absolute top-0 end-0 p-8 opacity-10"><Eye size={130} /></div>
             <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-6">
-              <Eye className="text-amber-300 h-7 w-7" />
+              <Eye className="text-white h-7 w-7" />
             </div>
             <h3 className="text-2xl font-display font-bold mb-4 text-white">Our Vision</h3>
-            <p className="text-white/80 leading-relaxed text-base">
+            <p className="text-white/80 leading-relaxed">
               To be the most trusted and respected NDIS provider in Sydney, known for our unwavering commitment to excellence, innovation in care, and the profound positive impact we make in the lives of those we serve.
             </p>
           </motion.div>
@@ -132,11 +125,11 @@ export default function About() {
 
         {/* Values */}
         <div className="text-center max-w-4xl mx-auto">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-sm font-semibold mb-5">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-semibold mb-5">
             Our Core Values
           </span>
-          <h2 className="text-4xl font-display font-bold mb-12 text-foreground">
-            What <span className="text-teal-700 dark:text-teal-400">Drives Us</span> Every Day
+          <h2 className="text-4xl font-display font-bold mb-12 text-gray-900 dark:text-white">
+            What <span className="text-purple-700 dark:text-purple-400">Drives Us</span> Every Day
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
             {values.map((value, idx) => (
@@ -146,12 +139,12 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className="flex items-center gap-3.5 bg-card p-5 rounded-2xl border border-border/50 card-shadow text-left group hover:-translate-y-0.5 hover:card-shadow-hover transition-all duration-300"
+                className="flex items-center gap-3.5 bg-white dark:bg-card p-5 rounded-2xl border border-gray-100 dark:border-border card-shadow text-left group hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center shrink-0 group-hover:bg-teal-700 transition-colors">
-                  <value.icon size={18} className="text-teal-700 dark:text-teal-400 group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center shrink-0 group-hover:bg-purple-600 transition-colors">
+                  <value.icon size={18} className="text-purple-700 dark:text-purple-400 group-hover:text-white transition-colors" />
                 </div>
-                <span className="font-semibold text-foreground text-sm leading-snug">{value.text}</span>
+                <span className="font-semibold text-gray-800 dark:text-foreground text-sm leading-snug">{value.text}</span>
               </motion.div>
             ))}
           </div>
