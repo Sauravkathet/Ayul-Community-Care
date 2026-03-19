@@ -1,7 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, Users, Heart, BookOpen, Info, Phone, MapPin, Shield, Home, Brain, Accessibility, HandHeart, Newspaper, FileText, HelpCircle, Building2, Clock } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const dropdownMenus = [
   {
@@ -145,7 +144,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-9 w-full z-50 transition-all duration-300 ${
         scrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-white/80 backdrop-blur-sm py-4"
       }`}
     >
@@ -208,7 +207,6 @@ export function Navbar() {
 
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
-            <LanguageSwitcher />
             <Link
               href="/contact"
               className="px-5 py-2.5 bg-teal-700 text-white text-sm font-semibold rounded-full shadow-lg shadow-teal-700/20 hover:bg-teal-800 hover:-translate-y-0.5 transition-all duration-200"
@@ -219,7 +217,6 @@ export function Navbar() {
 
           {/* Mobile toggle */}
           <div className="flex items-center gap-3 lg:hidden">
-            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-teal-700 p-2 rounded-lg hover:bg-teal-50 transition-colors"
