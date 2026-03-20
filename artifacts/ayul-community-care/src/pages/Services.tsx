@@ -88,13 +88,13 @@ export default function Services() {
             >
               {/* Image */}
               <div className="h-44 overflow-hidden relative">
-                <div className="absolute inset-0 bg-purple-900/40 group-hover:bg-purple-900/25 transition-opacity z-10" />
+                <div className="absolute inset-0 bg-[#8E6BBF]/30 group-hover:bg-[#8E6BBF]/18 transition-opacity z-10" />
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute bottom-4 start-4 z-20 w-13 h-13 w-12 h-12 rounded-2xl bg-purple-600 flex items-center justify-center shadow-xl">
+                <div className="absolute bottom-4 start-4 z-20 w-13 h-13 w-12 h-12 rounded-2xl bg-[#8E6BBF] flex items-center justify-center shadow-xl">
                   <service.icon className="h-6 w-6 text-white" />
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function Services() {
                 <div className="grid grid-cols-2 gap-1.5 mb-6">
                   {service.points.map((pt) => (
                     <div key={pt} className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-muted-foreground">
-                      <CheckCircle2 size={13} className="text-purple-600 shrink-0" />
+                      <CheckCircle2 size={13} className="text-[#8E6BBF] shrink-0" />
                       {pt}
                     </div>
                   ))}
@@ -115,7 +115,7 @@ export default function Services() {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-600 hover:text-purple-800 dark:text-purple-400 hover:gap-2.5 transition-all duration-200"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#8E6BBF] hover:text-[#7d5cad] dark:text-[#E6DDF5] hover:gap-2.5 transition-all duration-200"
                 >
                   Enquire about this service <ArrowRight size={15} />
                 </Link>
@@ -126,24 +126,25 @@ export default function Services() {
       </div>
 
       {/* Bottom CTA — BLACK */}
-      <div className="py-24 relative overflow-hidden" style={{ backgroundColor: "#111827" }}>
-        <div className="absolute top-0 end-0 w-80 h-80 bg-purple-600/10 rounded-full blur-[80px] pointer-events-none" />
+      <div className="py-24 relative overflow-hidden" style={{ backgroundColor: "#E8DED1" }}>
+        <div className="absolute top-0 end-0 w-80 h-80 rounded-full blur-[80px] pointer-events-none" style={{ backgroundColor: "rgba(230, 221, 245, 0.65)" }} />
         <div className="max-w-2xl mx-auto px-4 text-center relative z-10">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-purple-500/20 text-purple-300 text-sm font-semibold mb-5 border border-purple-500/20">
+          <span className="inline-block px-4 py-1.5 rounded-full text-[#8E6BBF] text-sm font-semibold mb-5 border" style={{ backgroundColor: "#E6DDF5", borderColor: "#d8c8f0" }}>
             Get Started Today
           </span>
-          <h2 className="text-4xl font-display font-bold text-white mb-4">Not sure which service is right for you?</h2>
-          <p className="text-gray-400 mb-10 leading-relaxed">Our friendly team will guide you through your options and help you get the most from your NDIS plan.</p>
+          <h2 className="text-4xl font-display font-bold text-[#2F2F2F] mb-4">Not sure which service is right for you?</h2>
+          <p className="text-[#4a4a4a] mb-10 leading-relaxed">Our friendly team will guide you through your options and help you get the most from your NDIS plan.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-full shadow-lg shadow-purple-600/20 hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-[#8E6BBF] hover:bg-[#7d5cad] text-white font-semibold rounded-full shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
               Talk to Our Team <ArrowRight size={18} />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-10 py-4 border border-white/20 text-gray-300 hover:text-white hover:border-purple-400/50 font-semibold rounded-full transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-4 border text-[#2F2F2F] hover:border-[#8E6BBF] font-semibold rounded-full transition-all duration-300"
+              style={{ backgroundColor: "#A8C3A0", borderColor: "#A8C3A0" }}
             >
               Make a Referral
             </Link>

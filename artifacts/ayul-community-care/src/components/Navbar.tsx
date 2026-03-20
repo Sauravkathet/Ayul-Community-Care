@@ -1,75 +1,73 @@
 import { Link, useLocation } from "wouter";
-import {
-  Menu, X, ChevronDown, Users, Heart, Info, Phone, MapPin,
-  Shield, Home, Brain, Accessibility, HandHeart, Newspaper,
-  FileText, HelpCircle, Building2, Clock, BookOpen,
-} from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 const dropdownMenus = [
   {
     label: "Who We Support",
     items: [
-      { icon: Users, title: "People with Disabilities", desc: "Tailored NDIS support for all disability types", href: "/services" },
-      { icon: Brain, title: "Psychosocial Support", desc: "Mental health and wellbeing assistance", href: "/services" },
-      { icon: Accessibility, title: "Aged Care Recipients", desc: "Compassionate care for older Australians", href: "/services" },
-      { icon: HandHeart, title: "Carers & Families", desc: "Support and respite for carers", href: "/services" },
+      { title: "People with Disabilities", desc: "Tailored NDIS support for all disability types", href: "/services" },
+      { title: "Psychosocial Support", desc: "Mental health and wellbeing assistance", href: "/services" },
+      { title: "Aged Care Recipients", desc: "Compassionate care for older Australians", href: "/services" },
+      { title: "Carers & Families", desc: "Support and respite for carers", href: "/services" },
     ],
   },
   {
     label: "Our Services",
     items: [
-      { icon: Shield, title: "NDIS Support Services", desc: "Plan management and support coordination", href: "/services" },
-      { icon: Heart, title: "Personal Care Assistance", desc: "Daily personal care and hygiene support", href: "/services" },
-      { icon: Users, title: "Community Participation", desc: "Social and recreational engagement", href: "/services" },
-      { icon: Home, title: "Daily Living Support", desc: "Household tasks and independent living", href: "/services" },
+      { title: "NDIS Support Services", desc: "Plan management and support coordination", href: "/services" },
+      { title: "Personal Care Assistance", desc: "Daily personal care and hygiene support", href: "/services" },
+      { title: "Community Participation", desc: "Social and recreational engagement", href: "/services" },
+      { title: "Daily Living Support", desc: "Household tasks and independent living", href: "/services" },
     ],
   },
   {
     label: "Resources",
     items: [
-      { icon: Newspaper, title: "News & Updates", desc: "Latest NDIS news and company updates", href: "/about" },
-      { icon: FileText, title: "NDIS Information", desc: "Understanding your NDIS plan and rights", href: "/about" },
-      { icon: HelpCircle, title: "FAQs", desc: "Answers to common questions", href: "/contact" },
-      { icon: BookOpen, title: "Our Blog", desc: "Tips, guides and care advice", href: "/about" },
+      { title: "News & Updates", desc: "Latest NDIS news and company updates", href: "/about" },
+      { title: "NDIS Information", desc: "Understanding your NDIS plan and rights", href: "/about" },
+      { title: "FAQs", desc: "Answers to common questions", href: "/#faqs" },
+      { title: "Our Blog", desc: "Tips, guides and care advice", href: "/about" },
     ],
   },
   {
     label: "About Us",
     items: [
-      { icon: Info, title: "Our Story", desc: "How Ayul Community Care came to be", href: "/about" },
-      { icon: Heart, title: "Mission & Values", desc: "What drives everything we do", href: "/about" },
-      { icon: Users, title: "Our Team", desc: "Meet our compassionate professionals", href: "/about" },
-      { icon: Shield, title: "NDIS Registered", desc: "Fully registered and quality assured", href: "/about" },
+      { title: "Our Story", desc: "How Ayul Community Care came to be", href: "/about" },
+      { title: "Mission & Values", desc: "What drives everything we do", href: "/about" },
+      { title: "Our Team", desc: "Meet our compassionate professionals", href: "/about" },
+      { title: "NDIS Registered", desc: "Fully registered and quality assured", href: "/about" },
     ],
   },
   {
     label: "Locations",
     items: [
-      { icon: MapPin, title: "Sydney — Head Office", desc: "Sydney, NSW, Australia", href: "/contact" },
-      { icon: Phone, title: "+61 450 602 904", desc: "Mon–Fri 8am–6pm AEST", href: "tel:+61450602904" },
-      { icon: Clock, title: "24/7 Emergency Line", desc: "Always here when you need us", href: "/contact" },
-      { icon: Building2, title: "admin@ayulcommunitycare.com.au", desc: "General enquiries & referrals", href: "mailto:admin@ayulcommunitycare.com.au" },
+      { title: "Sydney — Head Office", desc: "Sydney, NSW, Australia", href: "/contact" },
+      { title: "+61 450 602 904", desc: "Mon–Fri 8am–6pm AEST", href: "tel:+61450602904" },
+      { title: "24/7 Emergency Line", desc: "Always here when you need us", href: "/contact" },
+      { title: "admin@ayulcommunitycare.com.au", desc: "General enquiries and referrals", href: "mailto:admin@ayulcommunitycare.com.au" },
     ],
   },
 ];
 
-const menuVariants = {
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
+const menuVariants: Variants = {
   hidden: { opacity: 0, y: -6, clipPath: "inset(0 0 100% 0 round 0px)" },
-  visible: { opacity: 1, y: 0, clipPath: "inset(0 0 0% 0 round 0px)", transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] } },
-  exit: { opacity: 0, y: -6, clipPath: "inset(0 0 100% 0 round 0px)", transition: { duration: 0.22, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, clipPath: "inset(0 0 0% 0 round 0px)", transition: { duration: 0.3, ease: smoothEase } },
+  exit: { opacity: 0, y: -6, clipPath: "inset(0 0 100% 0 round 0px)", transition: { duration: 0.22, ease: smoothEase } },
 };
 
-const itemContainerVariants = {
+const itemContainerVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.04, delayChildren: 0.07 } },
   exit: {},
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, x: -8 },
-  visible: { opacity: 1, x: 0, transition: { ease: [0.22, 1, 0.36, 1], duration: 0.28 } },
+  visible: { opacity: 1, x: 0, transition: { ease: smoothEase, duration: 0.28 } },
   exit: { opacity: 0, x: -4, transition: { duration: 0.12 } },
 };
 
@@ -79,30 +77,27 @@ function DesktopDropdown({ menu, isOpen, onClose }: { menu: typeof dropdownMenus
       {isOpen && (
         <motion.div
           initial="hidden" animate="visible" exit="exit" variants={menuVariants}
-          className="absolute top-full start-1/2 -translate-x-1/2 mt-2 w-[520px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden z-[100]"
+          className="absolute top-full start-1/2 -translate-x-1/2 mt-2 w-[290px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden z-[100]"
         >
-          <motion.div className="p-2 grid grid-cols-2 gap-1" variants={itemContainerVariants} initial="hidden" animate="visible" exit="exit">
+          <motion.div className="p-2 flex flex-col gap-1" variants={itemContainerVariants} initial="hidden" animate="visible" exit="exit">
             {menu.items.map((item) => (
               <motion.div key={item.title} variants={itemVariants}>
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className="flex items-start gap-3 px-4 py-3.5 rounded-xl hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors group"
+                  className="block px-3.5 py-3 rounded-xl hover:bg-[#F7F5F2] dark:hover:bg-[#4b3c66]/30 transition-colors group"
                 >
-                  <div className="mt-0.5 p-2 bg-purple-100 dark:bg-purple-900/40 rounded-lg group-hover:bg-purple-600 transition-colors shrink-0">
-                    <item.icon size={15} className="text-purple-700 dark:text-purple-400 group-hover:text-white transition-colors" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-tight">{item.title}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">{item.desc}</p>
-                  </div>
+                  <p className="text-[13px] font-semibold text-gray-900 dark:text-gray-100 leading-tight group-hover:text-[#8E6BBF] dark:group-hover:text-[#E6DDF5] transition-colors">
+                    {item.title}
+                  </p>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">{item.desc}</p>
                 </Link>
               </motion.div>
             ))}
           </motion.div>
-          <div className="bg-purple-50 dark:bg-purple-950/40 border-t border-purple-100 dark:border-purple-900 px-5 py-3 flex items-center justify-between">
-            <span className="text-xs text-purple-700 dark:text-purple-400 font-medium">Need help finding the right support?</span>
-            <Link href="/contact" onClick={onClose} className="text-xs font-semibold text-white bg-purple-600 px-3 py-1.5 rounded-full hover:bg-purple-700 transition-colors">
+          <div className="bg-[#F7F5F2] dark:bg-[#3c324f] px-4 py-3 flex items-center justify-between gap-3">
+            <span className="text-[11px] text-[#2F2F2F] dark:text-[#F7F5F2] font-medium">Need help finding the right support?</span>
+            <Link href="/contact" onClick={onClose} className="text-[11px] font-semibold text-white bg-[#8E6BBF] px-3 py-1.5 rounded-full hover:bg-[#7d5cad] transition-colors whitespace-nowrap">
               Talk to us
             </Link>
           </div>
@@ -147,9 +142,9 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-9 w-full z-50 transition-all duration-300 bg-white dark:bg-gray-950 ${
+      className={`fixed top-11 w-full z-50 transition-all duration-300 bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm ${
         scrolled ? "shadow-sm py-3" : "py-4"
-      } border-b border-gray-100 dark:border-gray-800`}
+      } border-b border-[#E8DED1] dark:border-gray-800`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -157,13 +152,13 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0" onClick={closeAll}>
             <img
-              src={`${import.meta.env.BASE_URL}images/logo.png`}
+              src={`${import.meta.env.BASE_URL}ayullogo.png`}
               alt="Ayul Community Care Logo"
-              className="h-9 w-9 object-contain group-hover:scale-105 transition-transform"
+              className="h-12 w-12 object-contain group-hover:scale-105 transition-transform"
             />
             <span className="font-bold text-lg text-gray-900 dark:text-white tracking-tight leading-tight">
               Ayul<br />
-              <span className="text-sm font-semibold text-purple-600 dark:text-purple-400 leading-none">Community Care</span>
+              <span className="text-sm font-semibold text-[#8E6BBF] dark:text-[#E6DDF5] leading-none">Community Care</span>
             </span>
           </Link>
 
@@ -179,14 +174,14 @@ export function Navbar() {
                 <button
                   className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                     activeDropdown === menu.label
-                      ? "text-purple-700 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20"
-                      : "text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 hover:bg-purple-50/70 dark:hover:bg-purple-900/10"
+                      ? "text-[#8E6BBF] dark:text-[#E6DDF5] bg-[#E6DDF5] dark:bg-[#4b3c66]/40"
+                      : "text-gray-700 dark:text-gray-300 hover:text-[#8E6BBF] dark:hover:text-[#E6DDF5] hover:bg-[#F7F5F2] dark:hover:bg-[#4b3c66]/20"
                   }`}
                 >
                   {menu.label}
                   <ChevronDown
                     size={14}
-                    className={`transition-transform duration-200 ${activeDropdown === menu.label ? "rotate-180 text-purple-600" : "text-gray-400"}`}
+                    className={`transition-transform duration-200 ${activeDropdown === menu.label ? "rotate-180 text-[#8E6BBF]" : "text-gray-400"}`}
                   />
                 </button>
                 <DesktopDropdown menu={menu} isOpen={activeDropdown === menu.label} onClose={() => setActiveDropdown(null)} />
@@ -197,8 +192,8 @@ export function Navbar() {
               href="/contact"
               className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                 location === "/contact"
-                  ? "text-purple-700 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20"
-                  : "text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 hover:bg-purple-50/70"
+                  ? "text-[#8E6BBF] dark:text-[#E6DDF5] bg-[#E6DDF5] dark:bg-[#4b3c66]/40"
+                  : "text-gray-700 dark:text-gray-300 hover:text-[#8E6BBF] dark:hover:text-[#E6DDF5] hover:bg-[#F7F5F2]"
               }`}
             >
               Contact Us
@@ -209,7 +204,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center">
             <Link
               href="/contact"
-              className="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-full shadow-md shadow-purple-600/20 hover:-translate-y-0.5 transition-all duration-200"
+              className="px-5 py-2.5 bg-[#8E6BBF] hover:bg-[#7d5cad] text-white text-sm font-semibold rounded-full shadow-md hover:-translate-y-0.5 transition-all duration-200"
             >
               Get Support
             </Link>
@@ -218,7 +213,7 @@ export function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative z-[200] text-gray-700 dark:text-gray-300 p-2 rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
+            className="lg:hidden relative z-[200] text-gray-700 dark:text-gray-300 p-2 rounded-lg hover:bg-[#F7F5F2] dark:hover:bg-[#4b3c66]/20 transition-colors"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -261,7 +256,7 @@ export function Navbar() {
                   >
                     <button
                       onClick={() => setMobileExpanded(mobileExpanded === menu.label ? null : menu.label)}
-                      className="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
+                      className="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-[#F7F5F2] dark:hover:bg-[#4b3c66]/20 transition-colors"
                     >
                       {menu.label}
                       <motion.span animate={{ rotate: mobileExpanded === menu.label ? 180 : 0 }} transition={{ duration: 0.2 }}>
@@ -287,15 +282,10 @@ export function Navbar() {
                                 <Link
                                   href={item.href}
                                   onClick={closeAll}
-                                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-gray-600 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-700 dark:hover:text-purple-400 transition-colors"
+                                  className="block px-4 py-3 rounded-xl text-sm text-gray-600 dark:text-gray-300 hover:bg-[#F7F5F2] dark:hover:bg-[#4b3c66]/20 hover:text-[#8E6BBF] dark:hover:text-[#E6DDF5] transition-colors"
                                 >
-                                  <div className="p-1.5 bg-purple-100 dark:bg-purple-900/40 rounded-lg shrink-0">
-                                    <item.icon size={14} className="text-purple-700 dark:text-purple-400" />
-                                  </div>
-                                  <div>
-                                    <p className="font-medium leading-tight">{item.title}</p>
-                                    <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">{item.desc}</p>
-                                  </div>
+                                  <p className="font-medium leading-tight text-[13px]">{item.title}</p>
+                                  <p className="text-[11px] text-gray-400 dark:text-gray-500 mt-1 leading-relaxed">{item.desc}</p>
                                 </Link>
                               </motion.div>
                             ))}
@@ -311,7 +301,7 @@ export function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 + dropdownMenus.length * 0.04, duration: 0.3 }}
                 >
-                  <Link href="/contact" onClick={closeAll} className="block px-4 py-3.5 rounded-xl text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+                  <Link href="/contact" onClick={closeAll} className="block px-4 py-3.5 rounded-xl text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-[#F7F5F2] dark:hover:bg-[#4b3c66]/20 transition-colors">
                     Contact Us
                   </Link>
                 </motion.div>
@@ -323,7 +313,7 @@ export function Navbar() {
                   <Link
                     href="/contact"
                     onClick={closeAll}
-                    className="block w-full text-center py-3.5 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl shadow-md shadow-purple-600/20 transition-colors"
+                    className="block w-full text-center py-3.5 bg-[#8E6BBF] hover:bg-[#7d5cad] text-white font-semibold rounded-xl shadow-md transition-colors"
                   >
                     Get Support
                   </Link>

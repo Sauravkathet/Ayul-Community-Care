@@ -20,7 +20,7 @@ const links = {
   ],
   support: [
     { label: "NDIS Information", href: "#" },
-    { label: "FAQs", href: "#" },
+    { label: "FAQs", href: "/#faqs" },
     { label: "Make a Referral", href: "/contact" },
     { label: "Emergency Contact", href: "tel:1800233673" },
     { label: "Privacy Policy", href: "#" },
@@ -30,28 +30,29 @@ const links = {
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: "#0F172A" }} className="text-gray-400">
+    <footer style={{ backgroundColor: "#E8DED1" }} className="text-[#4a4a4a]">
 
       {/* Top CTA strip */}
-      <div className="border-b border-white/5">
+      <div className="border-b border-[#d8cdbd]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl font-display font-bold text-white mb-1">
+              <h3 className="text-xl font-display font-bold text-[#2F2F2F] mb-1">
                 Ready to get the support you deserve?
               </h3>
-              <p className="text-gray-400 text-sm">Our team is available 24/7 — reach out today.</p>
+              <p className="text-[#5a5a5a] text-sm">Our team is available 24/7 — reach out today.</p>
             </div>
             <div className="flex gap-3 shrink-0">
               <Link
                 href="/contact"
-                className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-full transition-colors text-sm"
+                className="px-6 py-3 bg-[#8E6BBF] hover:bg-[#7d5cad] text-white font-semibold rounded-full transition-colors text-sm"
               >
                 Get in Touch
               </Link>
               <a
                 href="tel:1800233673"
-                className="px-6 py-3 border border-white/15 text-gray-300 hover:text-white hover:border-purple-500/40 font-medium rounded-full transition-colors text-sm"
+                className="px-6 py-3 border font-medium rounded-full transition-colors text-sm text-[#2F2F2F]"
+                style={{ borderColor: "#A8C3A0", backgroundColor: "#A8C3A0" }}
               >
                 1800 233 673
               </a>
@@ -68,38 +69,38 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5">
               <img
-                src={`${import.meta.env.BASE_URL}images/logo.png`}
+                src={`${import.meta.env.BASE_URL}ayullogo.png`}
                 alt="Ayul Community Care"
-                className="h-9 w-9 object-contain"
+                className="h-12 w-12 object-contain"
               />
-              <span className="font-display font-bold text-base text-white leading-tight">
+              <span className="font-display font-bold text-base text-[#2F2F2F] leading-tight">
                 Ayul<br />
-                <span className="text-sm font-semibold text-purple-400 leading-none">Community Care</span>
+                <span className="text-sm font-semibold text-[#8E6BBF] leading-none">Community Care</span>
               </span>
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed mb-6">
+            <p className="text-sm text-[#5a5a5a] leading-relaxed mb-6">
               A registered NDIS provider delivering compassionate, person-centered support across Sydney.
             </p>
             <div className="space-y-2.5 text-sm">
-              <a href="tel:+61450602904" className="flex items-center gap-2.5 hover:text-purple-400 transition-colors">
-                <Phone size={14} className="text-purple-500 shrink-0" /> +61 450 602 904
+              <a href="tel:+61450602904" className="flex items-center gap-2.5 hover:text-[#8E6BBF] transition-colors">
+                <Phone size={14} className="text-[#8E6BBF] shrink-0" /> +61 450 602 904
               </a>
-              <a href="mailto:admin@ayulcommunitycare.com.au" className="flex items-center gap-2.5 hover:text-purple-400 transition-colors break-all">
-                <Mail size={14} className="text-purple-500 shrink-0" /> admin@ayulcommunitycare.com.au
+              <a href="mailto:admin@ayulcommunitycare.com.au" className="flex items-center gap-2.5 hover:text-[#8E6BBF] transition-colors break-all">
+                <Mail size={14} className="text-[#8E6BBF] shrink-0" /> admin@ayulcommunitycare.com.au
               </a>
               <div className="flex items-start gap-2.5">
-                <MapPin size={14} className="text-purple-500 shrink-0 mt-0.5" /> Sydney, NSW, Australia
+                <MapPin size={14} className="text-[#8E6BBF] shrink-0 mt-0.5" /> Sydney, NSW, Australia
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5 uppercase tracking-wider">Services</h4>
+            <h4 className="text-[#2F2F2F] font-semibold text-sm mb-5 uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5">
               {links.services.map((l) => (
                 <li key={l.label}>
-                  <Link href={l.href} className="text-sm text-gray-400 hover:text-purple-400 transition-colors">{l.label}</Link>
+                  <Link href={l.href} className="text-sm text-[#5a5a5a] hover:text-[#8E6BBF] transition-colors">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -107,11 +108,11 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5 uppercase tracking-wider">Company</h4>
+            <h4 className="text-[#2F2F2F] font-semibold text-sm mb-5 uppercase tracking-wider">Company</h4>
             <ul className="space-y-2.5">
               {links.company.map((l) => (
                 <li key={l.label}>
-                  <Link href={l.href} className="text-sm text-gray-400 hover:text-purple-400 transition-colors">{l.label}</Link>
+                  <Link href={l.href} className="text-sm text-[#5a5a5a] hover:text-[#8E6BBF] transition-colors">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -119,11 +120,11 @@ export function Footer() {
 
           {/* Support */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5 uppercase tracking-wider">Support</h4>
+            <h4 className="text-[#2F2F2F] font-semibold text-sm mb-5 uppercase tracking-wider">Support</h4>
             <ul className="space-y-2.5">
               {links.support.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-sm text-gray-400 hover:text-purple-400 transition-colors">{l.label}</a>
+                  <a href={l.href} className="text-sm text-[#5a5a5a] hover:text-[#8E6BBF] transition-colors">{l.label}</a>
                 </li>
               ))}
             </ul>
@@ -133,20 +134,21 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/5">
+      <div className="border-t border-[#d8cdbd]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-[#6a6a6a]">
             © {new Date().getFullYear()} Ayul Community Care. All rights reserved. NDIS Registered Provider.
           </p>
-          <div className="flex items-center gap-1 text-xs text-gray-500">
-            Made with <Heart size={12} className="text-purple-500 fill-purple-500 mx-1" /> in Sydney, Australia
+          <div className="flex items-center gap-1 text-xs text-[#6a6a6a]">
+            Made with <Heart size={12} className="text-[#8E6BBF] fill-[#8E6BBF] mx-1" /> in Sydney, Australia
           </div>
           <div className="flex items-center gap-3">
             {[Facebook, Instagram, Linkedin].map((Icon, i) => (
               <a
                 key={i}
                 href="#"
-                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-purple-400 hover:border-purple-500/40 transition-colors"
+                className="w-8 h-8 rounded-full border flex items-center justify-center text-[#6a6a6a] hover:text-[#8E6BBF] transition-colors"
+                style={{ borderColor: "#cfc2df" }}
               >
                 <Icon size={14} />
               </a>

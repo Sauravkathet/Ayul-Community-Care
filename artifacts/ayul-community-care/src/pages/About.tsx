@@ -40,9 +40,9 @@ export default function About() {
       </div>
 
       {/* Stats bar — BLACK */}
-      <div style={{ backgroundColor: "#111827" }}>
+      <div style={{ backgroundColor: "#E8DED1" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/8">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#d8cdbd]">
             {stats.map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -52,8 +52,8 @@ export default function About() {
                 transition={{ delay: idx * 0.08 }}
                 className="text-center py-10 px-4"
               >
-                <p className="text-3xl font-display font-extrabold text-purple-400 mb-1">{stat.value}</p>
-                <p className="text-sm text-gray-400 font-medium">{stat.label}</p>
+                <p className="text-3xl font-display font-extrabold text-[#8E6BBF] mb-1">{stat.value}</p>
+                <p className="text-sm text-[#5a5a5a] font-medium">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -65,11 +65,11 @@ export default function About() {
         {/* Story */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-semibold mb-5">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#E6DDF5] text-[#8E6BBF] text-sm font-semibold mb-5">
               Our Story
             </span>
             <h2 className="text-4xl font-display font-bold mb-6 text-gray-900 dark:text-white">
-              Born from a <span className="text-purple-700 dark:text-purple-400">Genuine Passion</span> to Help
+              Born from a <span className="text-[#8E6BBF] dark:text-[#E6DDF5]">Genuine Passion</span> to Help
             </h2>
             <div className="space-y-5 text-gray-500 dark:text-muted-foreground leading-relaxed">
               <p>Founded in 2020, Ayul Community Care was born from a deep-rooted passion to support and uplift individuals with disabilities. We recognized a need for care that goes beyond basic assistance — care that is truly person-centered, empathetic, and empowering.</p>
@@ -79,15 +79,15 @@ export default function About() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
-            <div className="absolute -inset-3 bg-gradient-to-br from-purple-100 to-violet-100 rounded-[3rem] blur-2xl opacity-60" />
+            <div className="absolute -inset-3 rounded-[3rem] blur-2xl opacity-60" style={{ background: "linear-gradient(135deg, #E6DDF5 0%, #A8C3A0 100%)" }} />
             <img
               src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1000&h=800&fit=crop"
               alt="Community Support"
               className="relative rounded-3xl shadow-2xl w-full object-cover"
             />
-            <div className="absolute -bottom-5 -start-5 bg-purple-600 text-white p-6 rounded-2xl shadow-xl">
+            <div className="absolute -bottom-5 -start-5 bg-[#8E6BBF] text-white p-6 rounded-2xl shadow-xl">
               <p className="text-3xl font-display font-bold">5+</p>
-              <p className="font-semibold text-sm text-purple-200">Years of Experience</p>
+              <p className="font-semibold text-sm text-[#E6DDF5]">Years of Experience</p>
             </div>
           </motion.div>
         </div>
@@ -99,10 +99,10 @@ export default function About() {
             className="bg-white dark:bg-card p-10 rounded-3xl card-shadow border border-gray-100 dark:border-border relative overflow-hidden"
           >
             <div className="absolute top-0 end-0 p-8 opacity-[0.04]"><Target size={130} /></div>
-            <div className="w-14 h-14 rounded-2xl bg-purple-600 flex items-center justify-center mb-6 shadow-md shadow-purple-600/20">
+            <div className="w-14 h-14 rounded-2xl bg-[#8E6BBF] flex items-center justify-center mb-6 shadow-md">
               <Target className="text-white h-7 w-7" />
             </div>
-            <h3 className="text-2xl font-display font-bold mb-4 text-purple-700 dark:text-purple-400">Our Mission</h3>
+            <h3 className="text-2xl font-display font-bold mb-4 text-[#8E6BBF] dark:text-[#E6DDF5]">Our Mission</h3>
             <p className="text-gray-500 dark:text-muted-foreground leading-relaxed">
               To provide high-quality, compassionate, and personalised support services that empower individuals with disabilities to achieve their goals, enhance their independence, and actively participate in their communities.
             </p>
@@ -125,11 +125,11 @@ export default function About() {
 
         {/* Values */}
         <div className="text-center max-w-4xl mx-auto">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-semibold mb-5">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#E6DDF5] text-[#8E6BBF] text-sm font-semibold mb-5">
             Our Core Values
           </span>
           <h2 className="text-4xl font-display font-bold mb-12 text-gray-900 dark:text-white">
-            What <span className="text-purple-700 dark:text-purple-400">Drives Us</span> Every Day
+            What <span className="text-[#8E6BBF] dark:text-[#E6DDF5]">Drives Us</span> Every Day
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
             {values.map((value, idx) => (
@@ -141,8 +141,8 @@ export default function About() {
                 transition={{ delay: idx * 0.08 }}
                 className="flex items-center gap-3.5 bg-white dark:bg-card p-5 rounded-2xl border border-gray-100 dark:border-border card-shadow text-left group hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center shrink-0 group-hover:bg-purple-600 transition-colors">
-                  <value.icon size={18} className="text-purple-700 dark:text-purple-400 group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 rounded-xl bg-[#E6DDF5] dark:bg-[#4b3c66]/40 flex items-center justify-center shrink-0 group-hover:bg-[#8E6BBF] transition-colors">
+                  <value.icon size={18} className="text-[#8E6BBF] dark:text-[#E6DDF5] group-hover:text-white transition-colors" />
                 </div>
                 <span className="font-semibold text-gray-800 dark:text-foreground text-sm leading-snug">{value.text}</span>
               </motion.div>

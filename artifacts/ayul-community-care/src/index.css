@@ -38,50 +38,46 @@
 
 /* ── LIGHT MODE ──────────────────────────────────────── */
 :root {
-  /* #F7F7FB background */
-  --background: 240 17% 97%;
-  --foreground: 221 39% 11%;       /* #111827 */
-  /* Purple primary: #9333EA */
-  --primary: 270 91% 56%;
+  --background: 36 24% 96%;
+  --foreground: 0 0% 18%;
+  --primary: 265 39% 58%;
   --primary-foreground: 0 0% 100%;
-  /* Soft purple secondary */
-  --secondary: 271 81% 68%;        /* #A855F7 */
-  --secondary-foreground: 0 0% 100%;
-  /* Amber accent */
-  --accent: 36 95% 52%;
-  --accent-foreground: 221 39% 11%;
-  --muted: 240 14% 93%;
-  --muted-foreground: 215 16% 44%;
+  --secondary: 106 23% 70%;
+  --secondary-foreground: 0 0% 18%;
+  --accent: 262 55% 91%;
+  --accent-foreground: 0 0% 18%;
+  --muted: 34 34% 86%;
+  --muted-foreground: 0 0% 30%;
   --card: 0 0% 100%;
-  --card-foreground: 221 39% 11%;
+  --card-foreground: 0 0% 18%;
   --popover: 0 0% 100%;
-  --popover-foreground: 221 39% 11%;
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
-  --ring: 270 91% 56%;
+  --popover-foreground: 0 0% 18%;
+  --border: 34 26% 82%;
+  --input: 34 26% 82%;
+  --ring: 265 39% 58%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
 }
 
 /* ── DARK MODE ───────────────────────────────────────── */
 .dark {
-  --background: 222 47% 8%;
-  --foreground: 210 30% 92%;
-  --primary: 270 80% 65%;
+  --background: 0 0% 14%;
+  --foreground: 36 24% 96%;
+  --primary: 265 39% 64%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 271 70% 72%;
-  --secondary-foreground: 0 0% 100%;
-  --accent: 36 88% 55%;
-  --accent-foreground: 222 47% 8%;
-  --muted: 222 22% 13%;
-  --muted-foreground: 215 16% 55%;
-  --card: 222 30% 11%;
-  --card-foreground: 210 30% 92%;
-  --popover: 222 30% 11%;
-  --popover-foreground: 210 30% 92%;
-  --border: 222 20% 18%;
-  --input: 222 20% 18%;
-  --ring: 270 80% 65%;
+  --secondary: 106 18% 38%;
+  --secondary-foreground: 36 24% 96%;
+  --accent: 262 32% 26%;
+  --accent-foreground: 36 24% 96%;
+  --muted: 0 0% 18%;
+  --muted-foreground: 34 16% 68%;
+  --card: 0 0% 16%;
+  --card-foreground: 36 24% 96%;
+  --popover: 0 0% 16%;
+  --popover-foreground: 36 24% 96%;
+  --border: 0 0% 22%;
+  --input: 0 0% 22%;
+  --ring: 265 39% 64%;
   --destructive: 0 62% 50%;
   --destructive-foreground: 0 0% 100%;
 }
@@ -100,19 +96,16 @@
 }
 
 @layer utilities {
-  /* Hero / CTA background — deep purple gradient */
   .hero-gradient {
-    background: linear-gradient(135deg, #4C1D95 0%, #7C3AED 40%, #9333EA 100%);
+    background: linear-gradient(135deg, #8e6bbf 0%, #a285cf 52%, #a8c3a0 100%);
   }
 
-  /* Inner page header — purple gradient */
   .page-header-gradient {
-    background: linear-gradient(135deg, #3B0764 0%, #7C3AED 55%, #A855F7 100%);
+    background: linear-gradient(135deg, #7d5cad 0%, #8e6bbf 58%, #a8c3a0 100%);
   }
 
-  /* Hero background (light) */
   .hero-bg-light {
-    background-color: #F7F7FB;
+    background-color: #f7f5f2;
   }
 
   .glass-nav {
@@ -124,27 +117,26 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 20px -4px rgba(0,0,0,0.08);
   }
   .card-shadow-hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 16px 32px -8px rgba(147, 51, 234, 0.14);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 16px 32px -8px rgba(142, 107, 191, 0.16);
   }
   .dark .card-shadow {
     box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 8px 24px -4px rgba(0,0,0,0.4);
   }
   .dark .card-shadow-hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 16px 32px -8px rgba(167, 85, 247, 0.2);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 16px 32px -8px rgba(142, 107, 191, 0.24);
   }
 
-  /* Purple top border glow on card hover */
   .card-purple-hover {
     @apply relative border border-gray-100 dark:border-border transition-all duration-300;
     border-top: 2px solid transparent;
   }
   .card-purple-hover:hover {
     @apply -translate-y-1;
-    border-top-color: #9333EA;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 16px 32px -8px rgba(147, 51, 234, 0.14);
+    border-top-color: #8e6bbf;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 16px 32px -8px rgba(142, 107, 191, 0.16);
   }
 
-  .soft-shadow { box-shadow: 0 10px 40px -10px rgba(147, 51, 234, 0.10); }
+  .soft-shadow { box-shadow: 0 10px 40px -10px rgba(142, 107, 191, 0.14); }
 
   [dir="rtl"] .rtl-flip { transform: scaleX(-1); }
 }

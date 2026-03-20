@@ -115,7 +115,7 @@ export default function Contact() {
                     <label htmlFor="name" className="text-sm font-semibold text-gray-700 dark:text-gray-300">Full Name *</label>
                     <input
                       id="name" {...form.register("name")}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-muted border border-gray-200 dark:border-border focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all text-gray-900 dark:text-white placeholder-gray-400"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F7F5F2] dark:bg-muted border border-[#E8DED1] dark:border-border focus:outline-none focus:border-[#8E6BBF] focus:ring-2 focus:ring-[#E6DDF5] transition-all text-gray-900 dark:text-white placeholder-gray-400"
                       placeholder="John Doe"
                     />
                     {form.formState.errors.name && <p className="text-destructive text-sm mt-1">{form.formState.errors.name.message}</p>}
@@ -124,7 +124,7 @@ export default function Contact() {
                     <label htmlFor="email" className="text-sm font-semibold text-gray-700 dark:text-gray-300">Email Address *</label>
                     <input
                       id="email" type="email" {...form.register("email")}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-muted border border-gray-200 dark:border-border focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all text-gray-900 dark:text-white placeholder-gray-400"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F7F5F2] dark:bg-muted border border-[#E8DED1] dark:border-border focus:outline-none focus:border-[#8E6BBF] focus:ring-2 focus:ring-[#E6DDF5] transition-all text-gray-900 dark:text-white placeholder-gray-400"
                       placeholder="john@example.com"
                     />
                     {form.formState.errors.email && <p className="text-destructive text-sm mt-1">{form.formState.errors.email.message}</p>}
@@ -135,7 +135,7 @@ export default function Contact() {
                   <label htmlFor="phone" className="text-sm font-semibold text-gray-700 dark:text-gray-300">Phone Number</label>
                   <input
                     id="phone" {...form.register("phone")}
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-muted border border-gray-200 dark:border-border focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all text-gray-900 dark:text-white placeholder-gray-400"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F7F5F2] dark:bg-muted border border-[#E8DED1] dark:border-border focus:outline-none focus:border-[#8E6BBF] focus:ring-2 focus:ring-[#E6DDF5] transition-all text-gray-900 dark:text-white placeholder-gray-400"
                     placeholder="+61 400 000 000"
                   />
                 </div>
@@ -144,7 +144,7 @@ export default function Contact() {
                   <label htmlFor="message" className="text-sm font-semibold text-gray-700 dark:text-gray-300">How can we help? *</label>
                   <textarea
                     id="message" rows={5} {...form.register("message")}
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-muted border border-gray-200 dark:border-border focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all resize-none text-gray-900 dark:text-white placeholder-gray-400"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F7F5F2] dark:bg-muted border border-[#E8DED1] dark:border-border focus:outline-none focus:border-[#8E6BBF] focus:ring-2 focus:ring-[#E6DDF5] transition-all resize-none text-gray-900 dark:text-white placeholder-gray-400"
                     placeholder="Tell us about your support needs..."
                   />
                   {form.formState.errors.message && <p className="text-destructive text-sm mt-1">{form.formState.errors.message.message}</p>}
@@ -153,7 +153,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={submitMutation.isPending}
-                  className="w-full py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl shadow-lg shadow-purple-600/20 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none flex justify-center items-center gap-2"
+                  className="w-full py-4 bg-[#8E6BBF] hover:bg-[#7d5cad] text-white font-bold rounded-xl shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none flex justify-center items-center gap-2"
                 >
                   {submitMutation.isPending ? "Sending..." : "Send Message"}
                   {!submitMutation.isPending && <Send size={18} />}

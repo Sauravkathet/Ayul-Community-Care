@@ -8,7 +8,7 @@ export function Layout({ children }: { children: ReactNode }) {
     <div className="flex flex-col min-h-screen">
       <TopBar />
       <Navbar />
-      <main className="flex-grow flex flex-col pt-[100px]">
+      <main className="flex-grow flex flex-col pt-[116px]">
         {children}
       </main>
       <Footer />
