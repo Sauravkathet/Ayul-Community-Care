@@ -10,7 +10,7 @@ const exploreCards = [
   {
     title: "Daily support with dignity",
     desc: "See how gentle one-to-one support helps people feel safe, comfortable, and more confident in everyday routines.",
-    image: "https://scontent.fbir7-1.fna.fbcdn.net/v/t51.82787-15/524242430_17888923941299001_3173373204567530605_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeFG7MSzHV-gd-kuPxD-yTN8qS1VBe6nX3-pLVUF7qdff-1mqZTIJgDe9hZPAS0YLCD2rOwXzd3BV8DX-j-9mr33&_nc_ohc=q9ukEvWdOrEQ7kNvwErb-SM&_nc_oc=Adrhy0UgkVmvY3uouNvSAw7G0KCn7dtu_UI5D-szG0PESXkfK886OhNOzAgnkVNY5av93lOzdBHlX7Elh_GO9pHp&_nc_zt=23&_nc_ht=scontent.fbir7-1.fna&_nc_gid=cbH_bcihh65AwCnLe6DU3g&_nc_ss=7a30f&oh=00_AfzbNlvlLB2QGY7LQNkOKPwCIgzA5L230cndo3744zZ0Sw&oe=69C2FBE6https://imgs.search.brave.com/rOib_wP2AaB5LHZLjNIJHr6ZObYcsOs8-Jbwnnz_00M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQ3/ODM3ODMzMy9waG90/by9wb3J0cmFpdC1v/Zi1wZW9wbGUtb24t/ZGlzYWJpbGl0eS1o/ZWFsdGgtY2FyZS1h/cnQtd29ya3Nob3At/Y3JlYXRpdmUtcGFp/bnRpbmctb24tY2Fu/dmFzLWFuZC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9QzZE/Umtpc2szUlQ2RTE1/YmNsdm85cVQzQWlk/TjM5YkpURGlsd3lZ/VTc5cz0",
+    image: "https://imgs.search.brave.com/rOib_wP2AaB5LHZLjNIJHr6ZObYcsOs8-Jbwnnz_00M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQ3/ODM3ODMzMy9waG90/by9wb3J0cmFpdC1v/Zi1wZW9wbGUtb24t/ZGlzYWJpbGl0eS1o/ZWFsdGgtY2FyZS1h/cnQtd29ya3Nob3At/Y3JlYXRpdmUtcGFp/bnRpbmctb24tY2Fu/dmFzLWFuZC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9QzZE/Umtpc2szUlQ2RTE1/YmNsdm85cVQzQWlk/TjM5YkpURGlsd3lZ/VTc5cz0",
     href: "/events#creative-social-club",
     tag: "Personal care",
   },

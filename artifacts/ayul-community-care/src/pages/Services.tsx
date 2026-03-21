@@ -17,7 +17,7 @@ const services = [
     icon: UserCheck,
     title: "Personal Care Assistance",
     desc: "Dignified and respectful support with daily personal activities tailored to your specific routines and preferences.",
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&h=500&fit=crop",
+    image: "https://imgs.search.brave.com/_7HJXY6NOjMASwce6W5TaVT6dASyrtvZzOSSbFkJJg4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTg4/NTQ3MjE0Ny9waG90/by9zZW5pb3ItY2l0/aXplbi1jYXJlLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1n/QzRsdGwteFZwc3Jy/ekcwaHVpM3FDMFly/aXJBTm1qdXRuRW9X/ZmgxclFjPQ",
     points: ["Grooming & hygiene", "Dressing support", "Mobility assistance", "Health monitoring"],
   },
   {
@@ -25,7 +25,7 @@ const services = [
     icon: Users,
     title: "Community Participation",
     desc: "Empowering you to engage in social, recreational, and civic activities that bring joy and meaning to your life.",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&h=500&fit=crop",
+    image: "https://imgs.search.brave.com/d3xicWNqLlTUuGrh4mz0UJobAbeNoaua9OfVedY0zWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMy/NzcwMjM4NS9waG90/by9hZ2VkLWJ1c2lu/ZXNzd29tYW4tdGVh/Y2hlci1vci1idXNp/bmVzcy1jb2FjaC1z/cGVha2luZy10by15/b3VuZy1wZW9wbGUu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXQtMGJGTmVLOFcy/b1NuSlkzd05FX1BS/UjdSek1rRlVnVFdP/N2NMV3E3bG89",
     points: ["Social outings", "Recreational activities", "Volunteer work", "Skills development"],
   },
   {
@@ -33,7 +33,7 @@ const services = [
     icon: Activity,
     title: "Daily Living Support",
     desc: "Skill development and assistance to build independence in managing everyday household tasks and routines.",
-    image: "https://images.unsplash.com/photo-1556910103-1c02745a872f?w=800&h=500&fit=crop",
+    image: "https://imgs.search.brave.com/_7HJXY6NOjMASwce6W5TaVT6dASyrtvZzOSSbFkJJg4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTg4/NTQ3MjE0Ny9waG90/by9zZW5pb3ItY2l0/aXplbi1jYXJlLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1n/QzRsdGwteFZwc3Jy/ekcwaHVpM3FDMFly/aXJBTm1qdXRuRW9X/ZmgxclFjPQ",
     points: ["Meal preparation", "Cleaning & tidying", "Shopping assistance", "Life skills coaching"],
   },
   {
@@ -41,7 +41,7 @@ const services = [
     icon: HeartPulse,
     title: "Disability Support",
     desc: "Specialised, empathetic care adapted to various disabilities, focusing on your capabilities and unique strengths.",
-    image: "https://images.unsplash.com/photo-1633525164213-90924436531d?w=800&h=500&fit=crop",
+    image: "https://imgs.search.brave.com/pEfgJvCREzZYeTkTmb2W-n7pDfFD9X6H9DOAfLwkvTU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTA0/ODIxMTAwL3Bob3Rv/L2Vuam95aW5nLXRo/ZS1jb21wYW55Lmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1q/SFpDVVNzZ19HYTFZ/WldIc2tWVERwWjRF/SGxxTWliVm5IeV9r/Zl96czVRPQ",
     points: ["Behaviour support", "Therapy assistance", "Medical coordination", "Capacity building"],
   },
   {
@@ -49,7 +49,7 @@ const services = [
     icon: Home,
     title: "Supported Independent Living",
     desc: "24/7 support in a shared or individual home, helping you live as independently and comfortably as possible.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop",
+    image: "https://imgs.search.brave.com/76DdcS1orokMlOqXjKvxWIPwFnpjmJXW4SWdz5p52C0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lYXN0/ZXJzZWFsc2FyLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Mi8wMy9FQVMtUGls/bGFyUGhvdG9fZDA1/YzEzOWE1YTU4MDBk/NDI5MzEyZjBlYjRj/YzI3NTdfMjAwMC0x/LnBuZw",
     points: ["24/7 on-call support", "Safe living environment", "Independence goals", "Personalised routines"],
   },
 ];
