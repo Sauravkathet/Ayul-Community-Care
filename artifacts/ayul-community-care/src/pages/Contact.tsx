@@ -74,7 +74,7 @@ export default function Contact() {
                   <div className="bg-white/15 p-3 rounded-xl shrink-0"><MapPin className="h-6 w-6 text-white" /></div>
                   <div>
                     <h4 className="font-semibold text-lg opacity-90 mb-1">Location</h4>
-                    <p className="text-white/75">Sydney, NSW<br />Australia</p>
+                    <p className="text-white/75">Melbourne, VIC<br />Australia</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -88,7 +88,7 @@ export default function Contact() {
                   <div className="bg-white/15 p-3 rounded-xl shrink-0"><Mail className="h-6 w-6 text-white" /></div>
                   <div>
                     <h4 className="font-semibold text-lg opacity-90 mb-1">Email</h4>
-                    <a href="mailto:admin@ayulcommunitycare.com.au" className="text-white/75 hover:text-white transition-colors break-all">admin@ayulcommunitycare.com.au</a>
+                    <a href="mailto:hello@kindredhorizoncare.com.au" className="text-white/75 hover:text-white transition-colors break-all">hello@kindredhorizoncare.com.au</a>
                   </div>
                 </div>
               </div>
@@ -96,8 +96,8 @@ export default function Contact() {
 
             <div className="h-64 bg-gray-100 dark:bg-muted rounded-[2rem] overflow-hidden relative border border-gray-100 dark:border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d3312.898864455823!2d151.2068940152102!3d-33.86650408065682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x5017d681632ccb0!2sSydney%20NSW!5e0!3m2!1sen!2sau!4v1620000000000!5m2!1sen!2sau"
-                width="100%" height="100%" style={{ border: 0 }} allowFullScreen={false} loading="lazy" title="Sydney Location Map"
+                src="https://maps.google.com/maps?q=Melbourne%20VIC%20Australia&z=11&output=embed"
+                width="100%" height="100%" style={{ border: 0 }} allowFullScreen={false} loading="lazy" title="Melbourne Location Map"
                 className="absolute inset-0 grayscale opacity-80"
               />
             </div>

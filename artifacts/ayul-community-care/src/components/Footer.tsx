@@ -70,26 +70,26 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-5">
               <img
                 src={`${import.meta.env.BASE_URL}ayullogo.png`}
-                alt="Ayul Community Care"
+                alt="Kindred Horizon Care"
                 className="h-12 w-12 object-contain"
               />
               <span className="font-display font-bold text-base text-[#2F2F2F] leading-tight">
-                Ayul<br />
-                <span className="text-sm font-semibold text-[#8E6BBF] leading-none">Community Care</span>
+                Kindred<br />
+                <span className="text-sm font-semibold text-[#8E6BBF] leading-none">Horizon Care</span>
               </span>
             </Link>
             <p className="text-sm text-[#5a5a5a] leading-relaxed mb-6">
-              A registered NDIS provider delivering compassionate, person-centered support across Sydney.
+              A registered NDIS provider delivering compassionate, person-centered support across Melbourne.
             </p>
             <div className="space-y-2.5 text-sm">
               <a href="tel:+61450602904" className="flex items-center gap-2.5 hover:text-[#8E6BBF] transition-colors">
                 <Phone size={14} className="text-[#8E6BBF] shrink-0" /> +61 450 602 904
               </a>
-              <a href="mailto:admin@ayulcommunitycare.com.au" className="flex items-center gap-2.5 hover:text-[#8E6BBF] transition-colors break-all">
-                <Mail size={14} className="text-[#8E6BBF] shrink-0" /> admin@ayulcommunitycare.com.au
+              <a href="mailto:hello@kindredhorizoncare.com.au" className="flex items-center gap-2.5 hover:text-[#8E6BBF] transition-colors break-all">
+                <Mail size={14} className="text-[#8E6BBF] shrink-0" /> hello@kindredhorizoncare.com.au
               </a>
               <div className="flex items-start gap-2.5">
-                <MapPin size={14} className="text-[#8E6BBF] shrink-0 mt-0.5" /> Sydney, NSW, Australia
+                <MapPin size={14} className="text-[#8E6BBF] shrink-0 mt-0.5" /> Melbourne, VIC, Australia
               </div>
             </div>
           </div>
@@ -137,10 +137,10 @@ export function Footer() {
       <div className="border-t border-[#d8cdbd]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-[#6a6a6a]">
-            © {new Date().getFullYear()} Ayul Community Care. All rights reserved. NDIS Registered Provider.
+            © {new Date().getFullYear()} Kindred Horizon Care. All rights reserved. NDIS Registered Provider.
           </p>
           <div className="flex items-center gap-1 text-xs text-[#6a6a6a]">
-            Made with <Heart size={12} className="text-[#8E6BBF] fill-[#8E6BBF] mx-1" /> in Sydney, Australia
+            Made with <Heart size={12} className="text-[#8E6BBF] fill-[#8E6BBF] mx-1" /> in Melbourne, Australia
           </div>
           <div className="flex items-center gap-3">
             {[Facebook, Instagram, Linkedin].map((Icon, i) => (

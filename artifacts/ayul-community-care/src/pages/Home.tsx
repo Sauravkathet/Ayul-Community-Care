@@ -35,7 +35,7 @@ const clientStories = [
     title: "Supported community living",
     quote:
       "I feel calmer, more confident, and more connected because the support is shaped around what works for me.",
-    name: "Maya, Ayul client",
+    name: "Maya, Kindred Horizon client",
     description:
       "With steady support and familiar routines, Maya now enjoys regular gardening mornings, local outings, and calmer social experiences that feel safe and meaningful.",
     image: "https://imgs.search.brave.com/oYEeTOrdD9y0c4BgglQVMnmcjLHVwORVtOo4N6QBjNM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9taXhlZC1y/YWNlLWZlbWFsZS1m/YW1pbHktcmVsYXhp/bmctMjYwbnctMjMw/MzM3ODY2OS5qcGc",
@@ -46,7 +46,7 @@ const clientStories = [
     title: "Growing daily independence",
     quote:
       "The support has helped me do more for myself while still feeling safe, understood, and encouraged every day.",
-    name: "Ethan, Ayul client",
+    name: "Ethan, Kindred Horizon client",
     description:
       "Cooking sessions and daily living support helped Ethan build confidence with routines, meals, and practical skills he can use at home every day.",
     image: "https://imgs.search.brave.com/KwM3ZgnhdsTAMys0bR0mAp_fQd9Cf3MpYxb8E2Rn0_A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM2/ODE5NjE1NS9waG90/by9oYXBweS1tYW4t/d2l0aC1kaXNhYmls/aXR5LXNpdHRpbmct/d2l0aC1oYW5kcy1j/bGFzcGVkLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1VUFRr/Ti1oc2lmNVlLTHZk/MGJSOU0tQzA1ZzND/ZUxvMW44SDRuaHBr/VTY4PQc",
@@ -57,7 +57,7 @@ const clientStories = [
     title: "Active lifestyle support",
     quote:
       "It feels good to have support that keeps me moving, social, and involved in the things I enjoy most.",
-    name: "Jordan, Ayul client",
+    name: "Jordan, Kindred Horizon client",
     description:
       "Movement-based support gave Jordan a positive way to stay active, social, and connected while working toward wellbeing goals with encouragement.",
     image: "https://imgs.search.brave.com/tySgQKTIhp2HC0O8sh9Oao3fTHDHgk78TxhxG_Qv_Ss/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNjgw/MjQ4MzYyL3Bob3Rv/L3N0dWRlbnQtaGVs/cGluZy1mcmllbmQt/d2l0aC1kaXNhYmls/aXR5LmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1TdUdjYjRn/ellxVGlvWjljZG5S/SG5IZHlSakxuVHFI/YXdzNnRkRXB1WjEw/PQ",
@@ -92,24 +92,24 @@ const serviceShowcase = [
 
 const faqs = [
   {
-    question: "What services does Ayul Community Care provide?",
+    question: "What services does Kindred Horizon Care provide?",
     answer:
       "We provide disability support, personal care, community participation, daily living assistance, support coordination, and supported independent living tailored to each participant's goals.",
   },
   {
-    question: "Who can access Ayul's disability services?",
+    question: "Who can access Kindred Horizon's disability services?",
     answer:
       "Our services are designed for people living with disability, NDIS participants, and families or carers looking for respectful, person-centred support across daily life and community engagement.",
   },
   {
-    question: "Is Ayul an NDIS registered disability service provider?",
+    question: "Is Kindred Horizon an NDIS registered disability service provider?",
     answer:
       "Yes. We operate as an NDIS-focused provider and deliver support with a strong emphasis on safety, dignity, compliance, and quality care standards.",
   },
   {
     question: "Where do you offer disability services in Australia?",
     answer:
-      "Our current core service area is Sydney and surrounding communities, with support shaped around participant needs, availability, and referral pathways.",
+      "Our current core service area is Melbourne and surrounding communities, with support shaped around participant needs, availability, and referral pathways.",
   },
   {
     question: "Can families and carers be involved?",
@@ -122,7 +122,7 @@ const newsHighlights = [
   {
     title: "Celebrating participant milestones across our community",
     excerpt:
-      "A look at the personal wins, shared achievements, and supportive moments that continue to shape everyday life at Ayul.",
+      "A look at the personal wins, shared achievements, and supportive moments that continue to shape everyday life at Kindred Horizon Care.",
     image: "https://imgs.search.brave.com/C1DtQtfMJBn4bihCFJR1WigoECjZlRvNTMOKxo8j79M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/amNmcy5vcmcvc2l0/ZXMvZGVmYXVsdC9m/aWxlcy9zdHlsZXMv/YmFubmVyX2Z1bGxf/Y29udGVudC9wdWJs/aWMvYmFubmVyLWlt/YWdlcy9QZW9wbGUl/MjB3aXRoJTIwRGlz/YWJpbGl0aWVzJTIw/QmFubmVyLmpwZz9p/dG9rPU9VRE13S0h4",
     type: "Article",
     date: "19 March 2026",
@@ -138,7 +138,7 @@ const newsHighlights = [
     href: "/events",
   },
   {
-    title: "Meet the newest faces joining the Ayul team",
+    title: "Meet the newest faces joining the Kindred Horizon team",
     excerpt:
       "Get to know the people bringing fresh energy, professional care, and person-centred support into our growing community.",
     image: "https://imgs.search.brave.com/9m2LNbOqSb_4MTcF4aFMCu4T4xcBhXyI6P10TcSIi4o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQ5/OTcxODMwNi9waG90/by9jb29raW5nLWNs/YXNzLWZyaWVuZHMu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PU5vRTRxTVduTmtL/RVBnS2dNbEVIR2pv/RU1tYktDeGRyRTFl/b1BZaFVaMzg9",
@@ -188,7 +188,7 @@ export default function Home() {
             >
               <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[11px] sm:text-xs font-semibold shadow-[0_14px_28px_-20px_rgba(47,47,47,0.4)]" style={{ backgroundColor: "rgba(247, 245, 242, 0.92)", color: "#8E6BBF" }}>
                 <HeartHandshake size={16} className="text-[#8E6BBF]" />
-                Sydney's Trusted NDIS Provider
+                Melbourne's Trusted NDIS Provider
               </div>
 
               <h1 className="mb-5 text-2xl sm:text-3xl lg:text-4xl xl:text-[2.75rem] font-display font-extrabold text-white leading-[1.05] drop-shadow-[0_10px_28px_rgba(0,0,0,0.35)]">
@@ -236,7 +236,7 @@ export default function Home() {
       <section style={{ backgroundColor: "#E8DED1" }} className="py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-[#2F2F2F] font-medium">
-            {["NDIS Registered Provider", "Person-Centered Approach", "24/7 Support Available", "Sydney Based", "Fully Insured & Qualified"].map((item) => (
+            {["NDIS Registered Provider", "Person-Centered Approach", "24/7 Support Available", "Melbourne Based", "Fully Insured & Qualified"].map((item) => (
               <span key={item} className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#8E6BBF]" />
                 {item}
@@ -522,7 +522,7 @@ export default function Home() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-[1.4rem] bg-white px-6 py-4 text-base font-semibold text-[#2F2F2F] transition-transform duration-300 hover:-translate-y-0.5"
               >
-                Contact Ayul <ArrowRight size={18} />
+                Contact Kindred Horizon <ArrowRight size={18} />
               </a>
             </div>
           </div>
