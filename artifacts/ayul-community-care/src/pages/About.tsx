@@ -29,7 +29,7 @@ export default function About() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-sm font-semibold mb-5 border border-white/20">
             Who We Are
           </span>
-          <h1 className="text-5xl font-display font-bold text-white mb-4">About Kindred Horizon Care</h1>
+          <h1 className="text-5xl font-display font-bold text-white mb-4">About At Community Care</h1>
           <p className="text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
             A trusted NDIS provider dedicated to making a meaningful difference in the lives of individuals with disabilities across Melbourne.
           </p>
@@ -72,7 +72,7 @@ export default function About() {
               Born from a <span className="text-[#8E6BBF] dark:text-[#E6DDF5]">Genuine Passion</span> to Help
             </h2>
             <div className="space-y-5 text-gray-500 dark:text-muted-foreground leading-relaxed">
-              <p>Founded in 2020, Kindred Horizon Care was born from a deep-rooted passion to support and uplift individuals with disabilities. We recognized a need for care that goes beyond basic assistance - care that is truly person-centered, empathetic, and empowering.</p>
+              <p>Founded in 2020, At Community Care was born from a deep-rooted passion to support and uplift individuals with disabilities. We recognized a need for care that goes beyond basic assistance - care that is truly person-centered, empathetic, and empowering.</p>
               <p>As a registered NDIS provider based in Melbourne, we have grown into a community of dedicated professionals who share a common goal: to help our participants achieve their aspirations, maintain their independence, and live life with dignity.</p>
               <p>Every person who comes to us receives a genuinely tailored support plan. We celebrate every milestone, no matter how small, because we know each step forward matters.</p>
             </div>

@@ -34,7 +34,7 @@ const dropdownMenus = [
   {
     label: "About Us",
     items: [
-      { title: "Our Story", desc: "How Kindred Horizon Care came to be", href: "/about" },
+      { title: "Our Story", desc: "How At Community Care came to be", href: "/about" },
       { title: "Mission & Values", desc: "What drives everything we do", href: "/about" },
       { title: "Our Team", desc: "Meet our compassionate professionals", href: "/about" },
       { title: "NDIS Registered", desc: "Fully registered and quality assured", href: "/about" },
@@ -46,7 +46,7 @@ const dropdownMenus = [
       { title: "Melbourne — Head Office", desc: "Melbourne, VIC, Australia", href: "/contact" },
       { title: "+61 450 602 904", desc: "Mon-Fri 8am-6pm AEST/AEDT", href: "tel:+61450602904" },
       { title: "24/7 Emergency Line", desc: "Always here when you need us", href: "/contact" },
-      { title: "hello@kindredhorizoncare.com.au", desc: "General enquiries and referrals", href: "mailto:hello@kindredhorizoncare.com.au" },
+      { title: "hello@atcommunitycare.com.au", desc: "General enquiries and referrals", href: "mailto:hello@atcommunitycare.com.au" },
     ],
   },
 ];
@@ -153,12 +153,12 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-3 group shrink-0" onClick={closeAll}>
             <img
               src={`${import.meta.env.BASE_URL}ayullogo.png`}
-              alt="Kindred Horizon Care Logo"
+              alt="At Community Care Logo"
               className="h-12 w-12 object-contain group-hover:scale-105 transition-transform"
             />
             <span className="font-bold text-lg text-gray-900 dark:text-white tracking-tight leading-tight">
-              Kindred<br />
-              <span className="text-sm font-semibold text-[#8E6BBF] dark:text-[#E6DDF5] leading-none">Horizon Care</span>
+              At<br />
+              <span className="text-sm font-semibold text-[#8E6BBF] dark:text-[#E6DDF5] leading-none">Community Care</span>
             </span>
           </Link>
 

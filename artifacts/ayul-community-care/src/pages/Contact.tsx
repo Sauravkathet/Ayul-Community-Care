@@ -88,7 +88,7 @@ export default function Contact() {
                   <div className="bg-white/15 p-3 rounded-xl shrink-0"><Mail className="h-6 w-6 text-white" /></div>
                   <div>
                     <h4 className="font-semibold text-lg opacity-90 mb-1">Email</h4>
-                    <a href="mailto:hello@kindredhorizoncare.com.au" className="text-white/75 hover:text-white transition-colors break-all">hello@kindredhorizoncare.com.au</a>
+                    <a href="mailto:hello@atcommunitycare.com.au" className="text-white/75 hover:text-white transition-colors break-all">hello@atcommunitycare.com.au</a>
                   </div>
                 </div>
               </div>
