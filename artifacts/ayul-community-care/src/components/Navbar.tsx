@@ -34,7 +34,7 @@ const dropdownMenus = [
   {
     label: "About Us",
     items: [
-      { title: "Our Story", desc: "How At Community Care came to be", href: "/about" },
+      { title: "Our Story", desc: "How AT Community Care came to be", href: "/about" },
       { title: "Mission & Values", desc: "What drives everything we do", href: "/about" },
       { title: "Our Team", desc: "Meet our compassionate professionals", href: "/about" },
       { title: "NDIS Registered", desc: "Fully registered and quality assured", href: "/about" },
@@ -153,11 +153,11 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-3 group shrink-0" onClick={closeAll}>
             <img
               src={`${import.meta.env.BASE_URL}ayullogo.png`}
-              alt="At Community Care Logo"
+              alt="AT Community Care Logo"
               className="h-12 w-12 object-contain group-hover:scale-105 transition-transform"
             />
             <span className="font-bold text-lg text-gray-900 dark:text-white tracking-tight leading-tight">
-              At<br />
+              AT<br />
               <span className="text-sm font-semibold text-[#8E6BBF] dark:text-[#E6DDF5] leading-none">Community Care</span>
             </span>
           </Link>
